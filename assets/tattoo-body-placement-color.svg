@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 281" width="500" height="281" role="img" aria-label="Selecting tattoo body placement and ink colour on a body outline">
+  <defs>
+    <linearGradient id="plbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef3fa"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="281" rx="14" fill="url(#plbg)"/>
+  <rect x="0.5" y="0.5" width="499" height="280" rx="13.5" fill="none" stroke="#dbe4f0"/>
+
+  <text x="40" y="42" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#3b82f6">STEP 3</text>
+  <text x="460" y="42" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#64748b">Placement &amp; colour</text>
+
+  <!-- body outline (front torso + arms) -->
+  <g transform="translate(210 60)" fill="#e2e8f0" stroke="#c3cede" stroke-width="2">
+    <circle cx="40" cy="22" r="16"/>
+    <path d="M22 44 h36 l6 10 l26 12 l-4 16 l-22 -8 v70 h-48 v-70 l-22 8 l-4 -16 l26 -12 Z"/>
+    <path d="M22 144 h18 v0 h0 z M40 144 h18"/>
+    <path d="M22 144 h16 v50 h-14 z M42 144 h16 v50 h-14 z"/>
+  </g>
+
+  <!-- placement pins -->
+  <g>
+    <g transform="translate(232 118)">
+      <path d="M0 0 c 9 0 16 7 16 16 c 0 12 -16 24 -16 24 c 0 0 -16 -12 -16 -24 c 0 -9 7 -16 16 -16 Z" fill="#3b82f6"/>
+      <circle cx="0" cy="16" r="6" fill="#ffffff"/>
+    </g>
+    <g transform="translate(288 150)">
+      <path d="M0 0 c 9 0 16 7 16 16 c 0 12 -16 24 -16 24 c 0 0 -16 -12 -16 -24 c 0 -9 7 -16 16 -16 Z" fill="#0f172a"/>
+      <circle cx="0" cy="16" r="6" fill="#ffffff"/>
+    </g>
+  </g>
+
+  <!-- ink colour palette -->
+  <text x="40" y="215" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#0f172a">Ink colour</text>
+  <g stroke="#ffffff" stroke-width="2">
+    <circle cx="130" cy="211" r="15" fill="#0f172a"/>
+    <circle cx="168" cy="211" r="15" fill="#ef4444"/>
+    <circle cx="206" cy="211" r="15" fill="#f59e0b"/>
+    <circle cx="244" cy="211" r="15" fill="#10b981"/>
+    <circle cx="282" cy="211" r="15" fill="#3b82f6"/>
+    <circle cx="320" cy="211" r="15" fill="#8b5cf6"/>
+    <circle cx="358" cy="211" r="15" fill="#ec4899"/>
+  </g>
+  <text x="40" y="255" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Black &amp; grey or full colour changes the price.</text>
+</svg>
