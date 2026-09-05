@@ -1,1 +1,54 @@
-/* Poli Standard — Dark/Light mode overrides for tattoo-price-estimator */
+/* Poli Standard — Dark/Light mode overrides for iframe-embedded tools */
+:root {
+  --bg: #0D0D0D;
+  --text: #FFFFFF;
+  --text-heading: #FFFFFF;
+  --surface: #1A1A1A;
+  --surface-elevated: #262626;
+  --border: #333333;
+  --muted: #9CA3AF;
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --primary: #3B82F6;
+  --primary-contrast: #FFFFFF;
+  --code-bg: #000000;
+  --code-text: #10B981;
+  --code-border: #444444;
+}
+
+:root[data-theme="light"],
+html.light,
+html.light-mode,
+body.light-mode {
+  --bg: #FFFFFF;
+  --text: #1A1A1A;
+  --text-heading: #111827;
+  --surface: #F9FAFB;
+  --surface-elevated: #F3F4F6;
+  --border: #E5E7EB;
+  --muted: #6B7280;
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --primary: #2563EB;
+  --primary-contrast: #FFFFFF;
+  --code-bg: #1F2937;
+  --code-text: #10B981;
+  --code-border: #D1D5DB;
+}
+
+:root[data-theme="dark"],
+html.dark,
+html.dark-mode,
+body.dark-mode {
+  --bg: #0D0D0D;
+  --text: #FFFFFF;
+  --text-heading: #FFFFFF;
+  --surface: #1A1A1A;
+  --surface-elevated: #262626;
+  --border: #333333;
+  --muted: #9CA3AF;
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --primary: #3B82F6;
+  --primary-contrast: #FFFFFF;
+  --code-bg: #000000;
+  --code-text: #10B981;
+  --code-border: #444444;
+}
