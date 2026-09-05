@@ -1,266 +1,328 @@
 <!DOCTYPE html>
 <html lang="en" class="dark" data-theme="dark">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-    <script>
+  <title>Tattoo Price Estimator | Poli International</title>
+  <meta name="description" content="Professional tattoo pricing estimator and studio benchmark reference. Calculates realistic price ranges based on size, detail, colour, placement, and artist tier with interactive price drivers and consultation guidance." />
+  <meta property="og:title" content="Tattoo Price Estimator | Poli International" />
+  <meta property="og:description" content="Professional tattoo pricing estimator and studio benchmark reference. Calculates realistic price ranges based on size, detail, colour, placement, and artist tier with interactive price drivers and consultation guidance." />
+  <meta property="og:type" content="website" />
+
+  <script>
     // Sync to the site's theme when embedded (ToolFrame posts `poli-theme`).
-    //
-    // The inner React bundle owns dark mode itself: it seeds its state from
-    // localStorage["poli-dark-mode"] (default "dark") at mount and drives the
-    // `.dark` class on <html> from that state via a useEffect. Its own toggle
-    // lives in a header that this wrapper hides, so we cannot click it. Instead
-    // we (a) SEED localStorage from the parent theme synchronously, before the
-    // deferred module runs, so the first render matches with no flash, and
-    // (b) on a later theme change, reload the iframe (only if it differs) so the
-    // app re-reads the seed. The app auto-saves form state, so a reload is safe.
     if (window.self !== window.top) {
-        var poliRoot = document.documentElement;
-        var POLI_LS_KEY = 'poli-dark-mode';
-
-        var poliSeed = function (light) {
-            try { localStorage.setItem(POLI_LS_KEY, light ? 'light' : 'dark'); } catch (e) {}
-        };
-        var poliApplyChrome = function (light) {
-            poliRoot.setAttribute('data-theme', light ? 'light' : 'dark');
-            poliRoot.classList.toggle('dark', !light);
-            var b = document.body;
-            if (b) {
-                b.classList.toggle('dark-mode', !light);
-                b.classList.toggle('light-mode', !!light);
-            }
-        };
-
-        // Read the parent's theme synchronously (same-origin) so we can seed
-        // BEFORE the React bundle initialises its state. Falls back to dark.
-        var initialLight = false;
-        try {
-            initialLight = window.top.document.documentElement.classList.contains('light-mode');
-        } catch (e) {}
-        poliSeed(initialLight);
-        poliApplyChrome(initialLight);
-        document.addEventListener('DOMContentLoaded', function () {
-            poliApplyChrome(poliRoot.getAttribute('data-theme') === 'light');
-        });
-
-        window.addEventListener('message', function (e) {
-            if (!e.data || e.data.type !== 'poli-theme') return;
-            var light = !!e.data.light;
-            var wantsDark = !light;
-            // The React app persists the theme it is CURRENTLY showing to this
-            // localStorage key (via its useEffect), so read it before we re-seed.
-            var prev = null;
-            try { prev = localStorage.getItem(POLI_LS_KEY); } catch (err) {}
-            var currentlyDark = (prev === null) ? true : (prev === 'dark');
-            poliSeed(light);
-            poliApplyChrome(light);
-            if (currentlyDark !== wantsDark) {
-                // Re-mount the app so it re-reads the freshly seeded theme.
-                window.location.reload();
-            }
-        });
+      var poliRoot = document.documentElement;
+      var POLI_LS_KEY = 'poli-dark-mode';
+      var poliSeed = function (light) {
+        try { localStorage.setItem(POLI_LS_KEY, light ? 'light' : 'dark'); } catch (e) {}
+      };
+      var poliApplyChrome = function (light) {
+        poliRoot.setAttribute('data-theme', light ? 'light' : 'dark');
+        poliRoot.classList.toggle('dark', !light);
+        var b = document.body;
+        if (b) {
+          b.classList.toggle('dark-mode', !light);
+          b.classList.toggle('light-mode', !!light);
+        }
+      };
+      var initialLight = false;
+      try {
+        initialLight = window.top.document.documentElement.classList.contains('light-mode');
+      } catch (e) {}
+      poliSeed(initialLight);
+      poliApplyChrome(initialLight);
+      document.addEventListener('DOMContentLoaded', function () {
+        poliApplyChrome(poliRoot.getAttribute('data-theme') === 'light');
+      });
+      window.addEventListener('message', function (e) {
+        if (!e.data || e.data.type !== 'poli-theme') return;
+        var light = !!e.data.light;
+        var wantsDark = !light;
+        var prev = null;
+        try { prev = localStorage.getItem(POLI_LS_KEY); } catch (err) {}
+        var currentlyDark = (prev === null) ? true : (prev === 'dark');
+        poliSeed(light);
+        poliApplyChrome(light);
+        if (currentlyDark !== wantsDark) {
+          window.location.reload();
+        }
+      });
     }
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tattoo Pricing Estimator | Poli International</title>
+  </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      // Make the bundle's `dark:` variants follow the `.dark` class we toggle
-      // above, instead of the visitor's OS colour-scheme preference.
-      tailwind.config = { darkMode: 'class' };
-    </script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="/tools/tattoo-price-estimator/css/tailwind.css">
+  <link rel="stylesheet" href="/tools/tattoo-price-estimator/css/poli-standard.css">
+  <link rel="stylesheet" href="/tools/tattoo-price-estimator/css/style.css">
+  <link rel="stylesheet" href="/tools/shared/theme.css">
+  <link rel="stylesheet" href="/tools/shared/print.css" media="print">
+  <link rel="stylesheet" href="/tools/shared/a11y.css">
 
-    <script type="importmap">
-    {
-      "imports": {
-        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
-        "react/": "https://aistudiocdn.com/react@^19.2.0/",
-        "react": "https://aistudiocdn.com/react@^19.2.0"
+  <script type="application/ld+json">
+  {
+    "@context": "//schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "AI Tattoo Price Estimator",
+        "url": "/tools/tattoo-price-estimator/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Professional tattoo pricing calculator and studio benchmark reference. Estimate tattoo costs in realistic ranges and compare studio rates.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "Poli International"
+        }
+      }
+    ]
+  }
+  </script>
+
+
+  <style>
+    /* Layout styling for iframe and standalone */
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      min-width: 100% !important;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+    #root {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      display: block !important;
+    }
+    .max-w-7xl, .max-w-6xl, .max-w-5xl, .container, .mx-auto {
+      max-width: 100% !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+    header.sticky, .site-header { display: none !important; }
+    @media print {
+      .tool-tabs, .tool-tab { display: none !important; }
+    }
+    .tool-tabs {
+      display: flex !important;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+    }
+    .tool-tab {
+      flex: 1;
+      padding: 1.25rem 0.75rem;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      background: var(--surface-elevated);
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.85rem;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .tool-tab.active {
+      background: var(--primary) !important;
+      color: var(--primary-contrast) !important;
+    }
+    .tool-main-content {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .estimator-title { color: var(--text-heading); }
+    .embed-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+    }
+    .embed-card p { color: var(--muted); }
+    .powered-by-footer {
+      border-top: 1px solid var(--border);
+      background: transparent;
+    }
+    .accent-bar {
+      width: 40px;
+      height: 3px;
+      background: var(--primary);
+      margin: 1rem auto 2.5rem;
+    }
+    .embed-title {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.75rem;
+      font-weight: 800;
+    }
+    .embed-code-area {
+      width: 100%;
+      height: 130px;
+      background: var(--code-bg);
+      color: var(--code-text);
+      border: 1px solid var(--code-border);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      resize: none;
+    }
+    .embed-copy-btn {
+      padding: 1rem 3rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 0.75rem;
+      border: none;
+      background: var(--primary);
+      color: var(--primary-contrast);
+      font-weight: 800;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .embed-copy-btn:hover {
+      transform: scale(1.03);
+      opacity: 0.95;
+    }
+    .footer-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .footer-link:hover {
+      opacity: 1;
+    }
+    .docs-sub-tabs {
+      display: flex;
+      gap: 0.5rem;
+      padding: 1rem 1.5rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .docs-sub-btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface-elevated);
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .docs-sub-btn.active {
+      background: var(--primary);
+      color: var(--primary-contrast);
+      border-color: var(--primary);
+    }
+  </style>
+  <script src="/js/input-guards.js"></script>
+  <script type="module" crossorigin src="/tools/tattoo-price-estimator/assets/index-Bq4uHLSx.js"></script>
+  <link rel="stylesheet" crossorigin href="/tools/tattoo-price-estimator/assets/index-B6qAn52B.css">
+</head>
+<body class="dark-mode">
+  <div class="tool-tabs">
+    <button class="tool-tab active" data-tab="tool" id="tab-btn-tool">🧮 Tattoo Estimator</button>
+    
+    <button class="tool-tab" data-tab="docs" id="tab-btn-docs">📖 Documentation</button>
+    <button class="tool-tab" data-tab="embed" id="tab-btn-embed">⚡ Embed Code</button>
+  </div>
+
+  <!-- TAB 1: AI TATTOO PRICE ESTIMATOR -->
+  <div id="tab-tool" class="wrapper-tab-content">
+    <main class="tool-main-content">
+      <div id="root"></div>
+    </main>
+  </div>
+
+  <!-- TAB 2: STUDIO PRICING BENCHMARK -->
+  
+
+  <!-- TAB 3: DOCUMENTATION -->
+  <div id="tab-docs" class="wrapper-tab-content" style="display:none;">
+    <div class="docs-sub-tabs">
+      
+      
+    </div>
+    <div id="doc-view-estimator">
+      <iframe src="/tools/tattoo-price-estimator/documentation.html" style="width:100%; min-height:1000px; border:none; background:var(--bg);" title="Tattoo Price Estimator Documentation"></iframe>
+    </div>
+    
+  </div>
+
+  <!-- TAB 4: EMBED CODE -->
+  <div id="tab-embed" class="wrapper-tab-content" style="display:none; padding: 4rem 1.5rem; text-align: center;">
+    <div class="max-w-4xl mx-auto space-y-8">
+      
+      <!-- Estimator Embed -->
+      <div class="embed-card" style="padding: 2.5rem; border-radius: 1rem; text-align: left;">
+        <h2 class="embed-title" style="font-size: 1.4rem; margin-bottom: 0.5rem;">Embed AI Tattoo Price Estimator</h2>
+        <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">Add the AI Tattoo Pricing Estimator to your studio website or client consultation flow.</p>
+        <textarea id="embedCodeEstimator" class="embed-code-area" readonly>&lt;iframe src="/tools/tattoo-price-estimator/index.html" width="100%" height="1200" frameborder="0" style="border-radius:12px; border: 1px solid var(--border);"&gt;&lt;/iframe&gt;</textarea>
+        <div>
+          <button onclick="copyCode('embedCodeEstimator', this)" class="embed-copy-btn">📋 Copy Estimator Embed</button>
+        </div>
+      </div>
+
+      <!-- Benchmark Embed -->
+      
+
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:4rem 1rem 2rem; opacity:0.3; font-size:0.8rem;">
+    <a href="/tools/" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; font-weight: 700; letter-spacing: 0.05em;">POWERED BY POLI INTERNATIONAL ENGINEERING</a>
+  </div>
+  <div class="powered-by-footer" style="text-align: center; padding: 2rem 1rem; margin-top: 1rem;">
+    <a href="/tattoo-price-estimator/" target="_blank" rel="noopener" class="footer-link">
+      POWERED BY POLI INTERNATIONAL
+    </a>
+  </div>
+
+  <script>
+    document.querySelectorAll('.tool-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.tool-tab').forEach(function(t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+        var tabName = tab.dataset.tab;
+        document.querySelectorAll('.wrapper-tab-content').forEach(function(content) {
+          content.style.display = 'none';
+        });
+        var activeContent = document.getElementById('tab-' + tabName);
+        if (activeContent) activeContent.style.display = 'block';
+      });
+    });
+
+    
+
+    function copyCode(id, btn) {
+      var textarea = document.getElementById(id);
+      if (textarea) {
+        textarea.select();
+        document.execCommand('copy');
+        var origText = btn.textContent;
+        btn.textContent = '✅ Copied!';
+        setTimeout(function() {
+          btn.textContent = origText;
+        }, 2000);
       }
     }
-    </script>
-    <script type="module" crossorigin src="/tools/tattoo-price-estimator/assets/main-DJHx3FeF.js"></script>
-    <link rel="modulepreload" crossorigin href="/tools/tattoo-price-estimator/assets/useHistoryState-COdHYAH-.js">
-    <link rel="stylesheet" href="/tools/tattoo-price-estimator/css/poli-standard.css">
-    <link rel="stylesheet" href="/tools/tattoo-price-estimator/css/style.css">
-    <link rel="stylesheet" href="/tools/shared/theme.css">
-
-    <style>
-        /* EXTREME LAYOUT FORCING FOR IFRAME */
-        html, body {
-            margin: 0 !important;
-            padding: 0 !important;
-            width: 100% !important;
-            min-width: 100% !important;
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Roboto', sans-serif;
-            overflow-x: hidden;
-        }
-
-        #root {
-            width: 100% !important;
-            max-width: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            display: block !important;
-        }
-
-        /* Override React/Tailwind internal constraints */
-        .max-w-7xl, .max-w-6xl, .max-w-5xl, .container, .mx-auto {
-            max-width: 100% !important;
-            width: 100% !important;
-            margin: 0 !important;
-            padding-left: 1rem !important;
-            padding-right: 1rem !important;
-        }
-
-        /* Hide the duplicate H1 and internal header if they exist in React bundle */
-        h1, header.sticky, .site-header { display: none !important; }
-
-        .tool-tabs {
-            display: flex !important;
-            background: var(--surface);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 9999;
-        }
-        .tool-tab {
-            flex: 1;
-            padding: 1.25rem;
-            border: none;
-            cursor: pointer;
-            font-weight: 700;
-            background: var(--surface-elevated);
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.85rem;
-        }
-        .tool-tab.active {
-            background: #3B82F6 !important;
-            color: #fff !important;
-        }
-
-        .tool-main-content {
-            width: 100% !important;
-            max-width: 100% !important;
-        }
-
-        .estimator-title { color: var(--text-heading); }
-        .embed-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-lg);
-        }
-        .embed-card p { color: var(--muted); }
-        .powered-by-footer {
-            border-top: 1px solid var(--border);
-            background: transparent;
-        }
-    </style>
-<script type='application/ld+json'>
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "AI Tattoo Price & Image Studio",
-  "url": "https://poliinternational.com/tools/tattoo-price-estimator/",
-  "description": "Professional tattoo pricing calculator with AI image generation. Estimate costs based on size, style, complexity, and placement for any tattoo project.",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "browserRequirements": "Requires JavaScript. Requires HTML5.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "Poli International",
-    "url": "https://poliinternational.com"
-  },
-  "creator": {
-    "@type": "Organization",
-    "name": "Poli International",
-    "url": "https://poliinternational.com"
-  },
-  "maintainer": {
-    "@type": "Organization",
-    "name": "Poli International",
-    "url": "https://poliinternational.com"
-  },
-  "dateModified": "2026-07-01",
-  "license": "https://opensource.org/licenses/MIT",
-  "isAccessibleForFree": true
-}
-</script>
-
-  <script src="/js/input-guards.js"></script>
-<link rel="stylesheet" href="/tools/shared/print.css" media="print">
-  <link rel="stylesheet" href="/tools/shared/a11y.css">
-  </head>
-<body class="dark-mode">
-    <div class="tool-tabs">
-        <button class="tool-tab active" data-tab="tool">🧮 Tool</button>
-        <button class="tool-tab" data-tab="docs">📖 Documentation</button>
-        <button class="tool-tab" data-tab="embed">⚡ Embed Code</button>
-    </div>
-
-    <div id="tab-tool" class="wrapper-tab-content">
-        <div style="padding: 2.5rem 1rem 1rem; text-align: center;">
-            <h2 class="estimator-title" style="font-size: 1.75rem; font-weight: 900; margin: 0; text-transform: uppercase; letter-spacing: -0.02em;">AI Tattoo Price Estimator</h2>
-            <div style="width: 40px; height: 3px; background: #3B82F6; margin: 1rem auto 2.5rem;"></div>
-        </div>
-        <main class="tool-main-content">
-            <div id="root"></div>
-        </main>
-    </div>
-
-    <div id="tab-docs" class="wrapper-tab-content" style="display:none;">
-        <iframe src="/tools/tattoo-price-estimator/documentation.html" style="width:100%; min-height:1000px; border:none; background:var(--bg);"></iframe>
-    </div>
-
-    <div id="tab-embed" class="wrapper-tab-content" style="display:none; padding: 5rem 1.5rem; text-align: center;">
-        <div class="embed-card" style="padding:3rem; border-radius:1rem; max-width:800px; margin:0 auto;">
-            <h2 style="color:#3B82F6; margin-bottom:1rem; font-size: 2rem; font-weight: 800;">Embed This AI Tool</h2>
-            <p style="margin-bottom:2.5rem; font-size: 1.1rem;">Add this professional estimator to your own studio website with one click.</p>
-            <textarea id="embedCodeTab" style="width:100%; height:160px; background:#000; color:#10B981; border:1px solid #444; border-radius:0.75rem; padding:1.5rem; font-family: 'Courier New', monospace; font-size:1rem; margin-bottom: 2rem; resize: none;" readonly>&lt;iframe src="https://poliinternational.com/tools/tattoo-price-estimator/index.html" width="100%" height="1200" frameborder="0" style="border-radius:12px; border: 1px solid #333;"&gt;&lt;/iframe&gt;</textarea>
-            <button onclick="copyEmbedCode()" style="padding: 1.25rem 4rem; font-size: 1.1rem; cursor: pointer; border-radius: 0.75rem; border: none; background: #3B82F6; color: #fff; font-weight: 800; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">📋 Copy Embed Code</button>
-        </div>
-    </div>
-
-    <script>
-        document.querySelectorAll('.tool-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.tool-tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-
-                const tabName = tab.dataset.tab;
-                document.querySelectorAll('.wrapper-tab-content').forEach(content => {
-                    content.style.display = 'none';
-                });
-                document.getElementById('tab-' + tabName).style.display = 'block';
-            });
-        });
-
-        function copyEmbedCode() {
-            const textarea = document.getElementById('embedCodeTab');
-            textarea.select();
-            document.execCommand('copy');
-            alert('Embed code copied to clipboard!');
-        }
-    </script>
-    <div style="text-align:center; padding:5rem 1rem 3rem; opacity:0.3; font-size:0.8rem;">
-        <a href="https://poliinternational.com/tools/" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; font-weight: 700; letter-spacing: 0.05em;">POWERED BY POLI INTERNATIONAL ENGINEERING</a>
-    </div>
-    <div class="powered-by-footer" style="text-align: center; padding: 2rem 1rem; margin-top: 2rem;">
-        <a href="https://poliinternational.com/tattoo-price-estimator/" target="_blank" rel="noopener" style="color: #3B82F6; text-decoration: none; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; opacity: 0.6; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">
-            POWERED BY POLI INTERNATIONAL
-        </a>
-    </div>
+  </script>
 </body>
 </html>
