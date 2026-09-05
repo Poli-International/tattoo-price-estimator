@@ -233,8 +233,8 @@
     }
   </style>
   <script src="/js/input-guards.js"></script>
-  <script type="module" crossorigin src="/tools/tattoo-price-estimator/assets/index-Bq4uHLSx.js"></script>
-  <link rel="stylesheet" crossorigin href="/tools/tattoo-price-estimator/assets/index-B6qAn52B.css">
+  <script type="module" crossorigin src="/tools/tattoo-price-estimator/assets/index-CbnuqnID.js"></script>
+  <link rel="stylesheet" crossorigin href="/tools/tattoo-price-estimator/assets/index-BAaO5mlF.css">
 </head>
 <body class="dark-mode">
   <div class="tool-tabs">
@@ -260,8 +260,8 @@
       
       
     </div>
-    <div id="doc-view-estimator">
-      <iframe src="/tools/tattoo-price-estimator/documentation.html" style="width:100%; min-height:1000px; border:none; background:var(--bg);" title="Tattoo Price Estimator Documentation"></iframe>
+    <div id="doc-view-estimator" style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem;">
+      <!-- Native React Documentation component mounted here via React Portal -->
     </div>
     
   </div>
@@ -281,7 +281,14 @@
       </div>
 
       <!-- Benchmark Embed -->
-      
+      <div class="embed-card" style="padding: 2.5rem; border-radius: 1rem; text-align: left;">
+        <h2 class="embed-title" style="font-size: 1.4rem; margin-bottom: 0.5rem;">Embed Studio Pricing Benchmark</h2>
+        <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">Add the regional pricing benchmark tool to your artist portal or studio operations dashboard.</p>
+        
+        <div>
+          <button onclick="copyCode('embedCodeBenchmark', this)" class="embed-copy-btn">📋 Copy Benchmark Embed</button>
+        </div>
+      </div>
 
     </div>
   </div>
