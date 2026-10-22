@@ -233,15 +233,15 @@
     }
   </style>
   <script src="/js/input-guards.js"></script>
-  <script type="module" crossorigin src="/tools/tattoo-price-estimator/assets/index-CbnuqnID.js"></script>
+  <script type="module" crossorigin src="/tools/tattoo-price-estimator/assets/index-CbnuqnID-ti.js"></script>
   <link rel="stylesheet" crossorigin href="/tools/tattoo-price-estimator/assets/index-BAaO5mlF.css">
 </head>
 <body class="dark-mode">
   <div class="tool-tabs">
-    <button class="tool-tab active" data-tab="tool" id="tab-btn-tool">🧮 Tattoo Estimator</button>
+    <button class="tool-tab active" data-tab="tool" id="tab-btn-tool"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-calc></use></svg> Tattoo Estimator</button>
     
-    <button class="tool-tab" data-tab="docs" id="tab-btn-docs">📖 Documentation</button>
-    <button class="tool-tab" data-tab="embed" id="tab-btn-embed">⚡ Embed Code</button>
+    <button class="tool-tab" data-tab="docs" id="tab-btn-docs"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-book></use></svg> Documentation</button>
+    <button class="tool-tab" data-tab="embed" id="tab-btn-embed"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-bolt></use></svg> Embed Code</button>
   </div>
 
   <!-- TAB 1: AI TATTOO PRICE ESTIMATOR -->
@@ -276,7 +276,7 @@
         <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">Add the AI Tattoo Pricing Estimator to your studio website or client consultation flow.</p>
         <textarea id="embedCodeEstimator" class="embed-code-area" readonly>&lt;iframe src="/tools/tattoo-price-estimator/index.html" width="100%" height="1200" frameborder="0" style="border-radius:12px; border: 1px solid var(--border);"&gt;&lt;/iframe&gt;</textarea>
         <div>
-          <button onclick="copyCode('embedCodeEstimator', this)" class="embed-copy-btn">📋 Copy Estimator Embed</button>
+          <button onclick="copyCode('embedCodeEstimator', this)" class="embed-copy-btn"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg> Copy Estimator Embed</button>
         </div>
       </div>
 
@@ -286,7 +286,7 @@
         <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">Add the regional pricing benchmark tool to your artist portal or studio operations dashboard.</p>
         
         <div>
-          <button onclick="copyCode('embedCodeBenchmark', this)" class="embed-copy-btn">📋 Copy Benchmark Embed</button>
+          <button onclick="copyCode('embedCodeBenchmark', this)" class="embed-copy-btn"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg> Copy Benchmark Embed</button>
         </div>
       </div>
 
@@ -323,10 +323,10 @@
       if (textarea) {
         textarea.select();
         document.execCommand('copy');
-        var origText = btn.textContent;
-        btn.textContent = '✅ Copied!';
+        var origHtml = btn.innerHTML;
+        btn.textContent = 'Copied!';
         setTimeout(function() {
-          btn.textContent = origText;
+          btn.innerHTML = origHtml;
         }, 2000);
       }
     }
