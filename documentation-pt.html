@@ -4,128 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentação do Estimador de Preços de Tatuagens | Poli International</title>
-    <meta name="description" content="Guia completo para utilizar o Estimador de Preços de Tatuagens">
-    <link rel="canonical" href="https://poliinternational.com/tattoo-price-estimator-documentation/">
+    <meta name="description" content="Como funciona o estimador, fatores de preço em estúdio e como preparar a consulta prévia.">
+    <link rel="canonical" href="https://poliinternational.com/tattoo-price-estimator/">
     <style>
-        body { background: #0f0f0f !important; color: #fff !important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; }
-        body.in-iframe .doc-hero h1 { display: none !important; }
-        body.in-iframe .doc-hero { padding: 2rem 2rem !important; margin-bottom: 1rem !important; }
+        body { background: #0f0f0f; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; }
+        body.in-iframe .doc-hero h1 { display: none; }
         * { box-sizing: border-box; }
-        .entry-content { max-width: 900px !important; margin: 0 auto !important; padding: 2rem 1rem !important; }
-        .doc-hero { background: linear-gradient(135deg, #3B82F6, #8B5CF6) !important; padding: 4rem 2rem !important; text-align: center !important; margin: -2rem -1rem 3rem !important; border-radius: 0 !important; }
-        .doc-hero h1 { font-size: 2.5rem !important; color: #fff !important; margin: 0 0 1rem 0 !important; font-weight: 700 !important; }
-        .doc-hero p { font-size: 1.25rem !important; color: #E0E7FF !important; margin: 0 !important; }
-        .doc-section { margin: 3rem 0 !important; padding: 2rem !important; background: #1a1a1a !important; border-radius: 0.75rem !important; border-left: 4px solid #3B82F6 !important; }
-        .doc-section h2 { color: #3B82F6 !important; font-size: 2rem !important; margin: 0 0 1.5rem 0 !important; font-weight: 600 !important; }
-        .doc-section h3 { color: #8B5CF6 !important; font-size: 1.5rem !important; margin: 2rem 0 1rem 0 !important; font-weight: 600 !important; }
-        .doc-section p { color: #ccc !important; line-height: 1.8 !important; margin-bottom: 1rem !important; font-size: 1.05rem !important; }
-        .doc-section ul { margin: 1rem 0 !important; padding-left: 0 !important; list-style: none !important; }
-        .doc-section ul li { padding: 0.75rem 0 0.75rem 2rem !important; position: relative !important; color: #ccc !important; line-height: 1.6 !important; }
-        .doc-section ul li:before { content: "" !important; position: absolute !important; left: 0 !important; color: #10B981 !important; font-weight: bold !important; font-size: 1.2rem !important; }
-        .doc-section a { color: #3B82F6 !important; text-decoration: none !important; font-weight: 600 !important; transition: color 0.2s !important; }
-        .doc-section a:hover { color: #8B5CF6 !important; text-decoration: underline !important; }
-        .highlight-box { background: linear-gradient(135deg, #1E3A8A, #4C1D95) !important; padding: 1.5rem !important; border-radius: 0.5rem !important; margin: 2rem 0 !important; border-left: 4px solid #10B981 !important; }
-        .highlight-box p { color: #E0E7FF !important; margin-bottom: 0 !important; }
-        .back-link { display: inline-block !important; padding: 1rem 2rem !important; background: #3B82F6 !important; color: #fff !important; text-decoration: none !important; border-radius: 0.5rem !important; font-weight: 700 !important; margin-top: 2rem !important; transition: transform 0.2s !important; }
-        .back-link:hover { transform: scale(1.05) !important; background: #8B5CF6 !important; }
+        .entry-content { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+        .doc-hero { background: linear-gradient(135deg, #3B82F6, #8B5CF6); padding: 3rem 2rem; text-align: center; border-radius: 0.75rem; margin-bottom: 2rem; }
+        .doc-hero h1 { font-size: 2.2rem; margin: 0 0 1rem; font-weight: 700; }
+        .doc-hero p { font-size: 1.15rem; color: #E0E7FF; margin: 0; }
+        .doc-hero .v2 { display: inline-block; margin-bottom: 1rem; padding: 0.2rem 0.75rem; border-radius: 999px; background: #10B981; color: #04241a; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; }
+        .doc-section { margin: 2rem 0; padding: 2rem; background: #1a1a1a; border-radius: 0.75rem; border-left: 4px solid #3B82F6; }
+        .doc-section h2 { color: #60A5FA; font-size: 1.7rem; margin: 0 0 1.25rem; font-weight: 600; }
+        .doc-section h3 { color: #A78BFA; font-size: 1.3rem; margin: 1.75rem 0 0.75rem; font-weight: 600; }
+        .doc-section p, .doc-section li { color: #ccc; line-height: 1.75; font-size: 1.02rem; }
+        .doc-section ul, .doc-section ol { padding-left: 1.5rem; }
+        .doc-section li { margin: 0.4rem 0; }
+        .doc-section code { background: #2a2a2a; padding: 0.1rem 0.35rem; border-radius: 0.25rem; font-size: 0.92em; }
+        .doc-section a { color: #60A5FA; font-weight: 600; }
+        .highlight-box { background: linear-gradient(135deg, #1E3A8A, #4C1D95); padding: 1.25rem 1.5rem; border-radius: 0.5rem; margin: 1.5rem 0; border-left: 4px solid #10B981; }
+        .highlight-box p { color: #E0E7FF; margin: 0; }
         table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
-        th, td { padding: 1rem; text-align: left; border: 1px solid #333; }
-        th { background: #2a2a2a; color: #3B82F6; }
+        th, td { padding: 0.75rem; text-align: left; border: 1px solid #333; vertical-align: top; }
+        th { background: #2a2a2a; color: #60A5FA; }
         td { color: #ccc; }
+        .doc-langs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.5rem; font-size: 0.9rem; }
+        .doc-langs a, .doc-langs span { padding: 0.3rem 0.7rem; border-radius: 999px; border: 1px solid #333; text-decoration: none; }
+        .doc-langs a { color: #60A5FA; }
+        .doc-langs span { background: #1E3A8A; color: #E0E7FF; border-color: #1E3A8A; font-weight: 700; }
     </style>
 </head>
 <body>
-<nav class="doc-langs" aria-label="Idioma da documentação" style="display:flex;flex-wrap:wrap;gap:6px 14px;max-width:900px;margin:12px auto 0;padding:0 16px;font-size:14px;"><a lang="en" href="documentation.html">English</a><a lang="fr" href="documentation-fr.html">Français</a><a lang="de" href="documentation-de.html">Deutsch</a><a lang="it" href="documentation-it.html">Italiano</a><a lang="es" href="documentation-es.html">Español</a><a lang="nl" href="documentation-nl.html">Nederlands</a><span lang="pt">Português</span><a lang="th" href="documentation-th.html">ไทย</a></nav>
-<script>
-    if (window.self !== window.top) { document.body.classList.add('in-iframe'); }
-</script>
+<script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>
     <div class="entry-content">
+        <nav class="doc-langs" aria-label="Documentation language"><a lang="en" href="documentation.html">English</a><a lang="fr" href="documentation-fr.html">Francais</a><a lang="de" href="documentation-de.html">Deutsch</a><a lang="es" href="documentation-es.html">Espanol</a><a lang="it" href="documentation-it.html">Italiano</a><a lang="nl" href="documentation-nl.html">Nederlands</a><span lang="pt">Portugues</span><a lang="th" href="documentation-th.html">ไทย</a></nav>
         <div class="doc-hero">
+            <span class="v2">V2</span>
             <h1>Estimador de Preços de Tatuagens</h1>
-            <p>Calculadora de preços de tatuagens com IA e decomposições detalhadas de custos</p>
+            <p>Como funciona o estimador, fatores de preço em estúdio e como preparar a consulta prévia.</p>
         </div>
-
         <div class="doc-section">
-            <h2>Visão geral</h2>
-            <p>O <strong>Estimador de Preços de Tatuagens</strong> é uma ferramenta inteligente de preços que calcula custos justos de tatuagens com base no tamanho, estilo, complexidade, localização e experiência do artista. Ajuda os artistas a elaborar orçamentos precisos e ajuda os clientes a compreender os fatores de preço.</p>
+        <h2>1. Objetivo e limitações</h2>
+        <p>O estimador de preços de tatuagem apresenta intervalos baseados nos valores habituais dos estúdios em nove mercados: Reino Unido, Londres, Estados Unidos, Europa Ocidental, Austrália, Europa Central e de Leste, Canadá, Brasil e Tailândia. Ajuda-o a perceber o que determina o preço antes de falar com um tatuador.</p>
+        <p>Esta ferramenta não fornece orçamentos vinculativos nem fixa preços para estúdios individuais. A tatuagem é um trabalho artesanal personalizado. Desenho exclusivo, anatomia, coberturas, tecido cicatricial e agenda do profissional só podem ser avaliados presencialmente. Apenas o artista que fará a sua tatuagem pode emitir um orçamento autêntico.</p>
         </div>
-
         <div class="doc-section">
-            <h2>Funcionalidades principais</h2>
-            <ul>
-                <li><strong>Cálculo do tamanho</strong> - Calcule polegadas quadradas e aplique as tarifas do setor</li>
-                <li><strong>Preços por estilo</strong> - Tarifas diferentes para realismo, tradicional, geométrico, etc.</li>
-                <li><strong>Análise de complexidade</strong> - Considera o nível de detalhe, cor versus preto e cinzento</li>
-                <li><strong>Ajuste por localização</strong> - Considera a dificuldade consoante a zona do corpo</li>
-                <li><strong>Orçamentos de várias sessões</strong> - Divide peças grandes em sessões</li>
-            </ul>
+        <h2>2. As seis variáveis de preço</h2>
+        <p>O estimador calcula os intervalos com base em seis variáveis fundamentais, refletindo tempo de máquina, consumíveis ou exigência técnica:</p>
+        <h3>Região geográfica</h3>
+        <p>Os custos fixos de estúdio e os valores médios variam significativamente consoante o país e a cidade. O centro de London e as grandes cidades dos US praticam valores por hora superiores aos de localidades menores.</p>
+        <h3>Dimensões da tatuagem</h3>
+        <p>O tamanho define o tempo base de cadeira. Uma peça minúscula demora menos de uma hora, ao passo que uma manga completa ou costas inteiras exigem dezenas de horas divididas por várias sessões.</p>
+        <h3>Nível de detalhe e densidade</h3>
+        <p>Traços simples e abertos exigem muito menos passagens de agulha do que geometrias complexas, realismo de linhas finas, micro-retratos ou preenchimento negro sólido.</p>
+        <h3>Paleta de cores</h3>
+        <p>O trabalho em preto e cinza utiliza diluições de um único pigmento. O trabalho a cores exige tintas distintas, limpezas frequentes, troca de cartuchos e saturação densa, aumentando a duração da sessão.</p>
+        <h3>Localização anatómica</h3>
+        <p>Áreas planas e musculadas como a parte externa do braço facilitam o esticar da pele e uma postura relaxada. Zonas curvas ou sensíveis como costelas, pescoço, mãos ou abdómen exigem um ritmo mais pausado, pausas de respiração e posições desconfortáveis.</p>
+        <h3>Experiência do artista</h3>
+        <p>Os tatuadores residentes cobram as tarifas padrão da região. Artistas seniores e especialistas com elevada procura, reconhecimento internacional ou estilos específicos cobram valores superiores por hora ou por dia.</p>
         </div>
-
         <div class="doc-section">
-            <h2>Como utilizar</h2>
-            <h3>1. Introduzir os detalhes da tatuagem</h3>
-            <p>Introduza a informação sobre tamanho, estilo e complexidade do desenho.</p>
-            <h3>2. Selecionar a localização</h3>
-            <p>Escolha a zona do corpo para ajustar a dificuldade.</p>
-            <h3>3. Definir as suas tarifas</h3>
-            <p>Configure a taxa horária ou o preço por polegada quadrada.</p>
-            <h3>4. Obter o orçamento</h3>
-            <p>Consulte a decomposição detalhada com estimativas de sessões.</p>
+        <h2>3. Como interpretar o intervalo estimado</h2>
+        <p>Cada estimativa apresenta um valor mínimo e um valor máximo. Esta variação traduz diferenças reais encontradas entre estúdios:</p>
+        <ul>
+        <li><strong>O que mantém o valor perto do mínimo:</strong> Desenhos flash pré-concebidos, aplicação direta do decalque em pele plana, realização numa única sessão e tarifas habituais de artistas residentes mantêm os custos perto da base.</li>
+        <li><strong>O que puxa o valor para o patamar superior:</strong> Desenho personalizado à mão livre, misturas densas de cor, pele difícil, coberturas de tatuagens antigas, pausas frequentes e especialistas conceituados aproximam o valor do teto.</li>
+        </ul>
         </div>
-
-                <div class="doc-section">
-            <h2>Casos de utilização práticos</h2>
-            <div class="use-case">
-                <h3 style="color: #10B981 !important;">Para proprietários de estúdios</h3>
-                <p>Padronize os protocolos técnicos e os modelos de preços do seu estúdio para garantir consistência entre todos os artistas e residentes.</p>
-            </div>
-            <div class="use-case">
-                <h3 style="color: #10B981 !important;">Para aprendizes</h3>
-                <p>Utilize estas ferramentas como enquadramento educativo para compreender a relação complexa entre geometria, biologia e segurança dos procedimentos.</p>
-            </div>
-        </div><div class="doc-section">
-            <h2>Perguntas frequentes</h2>
-            <div class="faq-item" style="margin-bottom: 1.5rem;">
-                <p><strong>O preço calculado por IA é preciso para todas as regiões?</strong></p>
-                <p>A ferramenta utiliza médias globais do setor. Recomendamos ajustar a taxa horária nas definições para corresponder à procura do seu mercado local.</p>
-            </div>
-            <div class="faq-item" style="margin-bottom: 1.5rem;">
-                <p><strong>Posso guardar os desenhos gerados?</strong></p>
-                <p>Atualmente, os desenhos são temporários. Recomendamos tirar uma captura de ecrã ou guardar a imagem diretamente no seu dispositivo para referência.</p>
-            </div>
-            <div class="faq-item" style="margin-bottom: 1.5rem;">
-                <p><strong>A ferramenta tem em conta as cobertas de tatuagens antigas (cover-ups)?</strong></p>
-                <p>Sim: selecionar «Complexidade elevada» e adicionar uma nota de localização para tecido cicatricial ajusta a estimativa de tempo em conformidade.</p>
-            </div>
-            <div class="faq-item" style="margin-bottom: 1.5rem;">
-                <p><strong>Que modelo de IA alimenta o estúdio de imagens?</strong></p>
-                <p>Utilizamos uma implementação personalizada do modelo Gemini Pro Vision, otimizada para a referência artística anatómica.</p>
-            </div>
-            <div class="faq-item" style="margin-bottom: 1.5rem;">
-                <p><strong>Os clientes podem usar esta ferramenta sem um artista?</strong></p>
-                <p>Sim, foi concebida para ajudar os clientes a compreender as variáveis que entram num orçamento profissional, reduzindo o choque de preço durante as consultas.</p>
-            </div>
-        </div>        <div class="doc-section" style="text-align: center; border-left: none !important; background: linear-gradient(135deg, #111, #222) !important;">
-            <h2>Precisa de assistência técnica?</h2>
-            <p>Se tiver problemas com esta ferramenta ou precisar de ajuda com uma integração personalizada, a nossa equipa de engenharia está disponível para o ajudar.</p>
-            <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; align-items: center;">
-                <a href="https://poliinternational.com/contact-us/" class="btn-primary" style="padding: 1rem 2.5rem; text-decoration: none; border-radius: 0.5rem; background: #669eff; color: #FFFFFF !important; font-weight: 800; font-size: 1.1rem; border: none;">Contacte-nos!</a>
-
-            </div>
-        </div>        <div style="text-align: center; margin-top: 4rem; padding: 2rem; border-top: 1px solid #333; opacity: 0.8;">
-            <p style="font-size: 0.95rem; color: #888; line-height: 1.6;">
-                Padrão técnico fornecido por <br/>
-                <a href="https://poliinternational.com/tattoo-price-estimator/" style="color: #3B82F6; text-decoration: none; font-weight: 800; font-size: 1.2rem; display: block; margin-top: 0.5rem;">Desenvolvido por Poli International Engineering</a>
-            </p>
-        </div>        <div class="doc-section">
-            <h2>Ferramentas relacionadas</h2>
-            <p>Descubra mais ferramentas profissionais da suite de engenharia da Poli International:</p>
-            <ul>
-                <li><a href="/tattoo-price-estimator/">Estimador de preços com IA</a> - Custo e estúdio de imagens</li>
-                <li><a href="/gauge-converter/">Conversor de calibres</a> - Conversão de milímetros e AWG</li>
-                <li><a href="/coverage-calculator/">Calculadora de cobertura</a> - Planeamento de tinta e sessões</li>
-            </ul>
-        </div><div style="text-align: center; margin-bottom: 4rem;"><a href="https://poliinternational.com/tattoo-price-estimator/" class="back-link" style="display: inline-block !important;">← Ir para a ferramenta</a></div>
+        <div class="doc-section">
+        <h2>4. O valor mínimo de estúdio</h2>
+        <p>Todos os estúdios profissionais aplicam uma tarifa mínima, mesmo para uma peça de dez minutos. Não é uma cobrança aleatória.</p>
+        <p>Qualquer procedimento exige a mesma bancada estéril: película de barreira médica, desinfetantes hospitalares, agulhas de cartucho descartáveis, copos de tinta, proteções para o grip e autoclave. Preparar e higienizar o espaço demora 20 a 30 minutos de trabalho e consumíveis antes de ligar a máquina. O mínimo garante padrões clínicos rigorosos para qualquer cliente.</p>
+        </div>
+        <div class="doc-section">
+        <h2>5. Sinal de reserva e compromisso</h2>
+        <p>Os estúdios profissionais solicitam sempre um sinal prévio para garantir data na agenda do artista.</p>
+        <p>O sinal reserva o horário de estúdio e remunera a elaboração do desenho personalizado antes da sessão. Não costuma ser reembolsado se cancelar sem aviso prévio suficiente, sendo deduzido do montante total no dia da tatuagem.</p>
+        </div>
+        <div class="doc-section">
+        <h2>6. Projetos de várias sessões</h2>
+        <p>Peças grandes como mangas, peitorais ou costas não podem ser concluídas de forma segura numa só sessão. São divididas por etapas: linhas de contorno, sombras de fundo e saturação final de cor.</p>
+        <p>Os estúdios espaçam as sessões entre 3 e 6 semanas para permitir a cicatrização completa da derme. Estes trabalhos são normalmente pagos à sessão ou por diária, permitindo repartir o investimento ao longo de vários meses.</p>
+        </div>
+        <div class="doc-section">
+        <h2>7. Quatro perguntas para levar à sua consulta</h2>
+        <p>Colocar questões concretas na consulta inicial garante expectativas claras e alinhadas com o tatuador:</p>
+        <ul>
+        <li><strong>1. Estrutura de preço</strong>: Este projeto é cobrado com orçamento fechado, por hora ou por diária completa?</li>
+        <li><strong>2. Previsão de tempo</strong>: Quantas horas no total e quantas sessões prevê que este trabalho irá exigir?</li>
+        <li><strong>3. Sinal e retoques</strong>: Qual o valor do sinal, qual o prazo de aviso para cancelamento e os retoques após a cicatrização estão incluídos?</li>
+        <li><strong>4. Proporções e posicionamento</strong>: Com base na minha ideia e anatomia, recomenda ajustar a escala ou o fluxo visual para favorecer a durabilidade?</li>
+        </ul>
+        </div>
+        <div class="doc-section">
+        <h2>8. Costumes relativos a gorjetas</h2>
+        <p>As práticas de gorjeta diferem consideravelmente de país para país. A gorjeta nunca é uma obrigação legal ou contratual, mas conhecer os hábitos locais ajuda a pagar com tranquilidade:</p>
+        <ul>
+        <li><strong>Estados Unidos</strong>: A gorjeta é habitual e esperada. Clientes satisfeitos deixam normalmente entre 15% e 20% do valor da sessão, entregue diretamente em dinheiro.</li>
+        <li><strong>Reino Unido</strong>: A gorjeta é apreciada, mas estritamente opcional. Em trabalhos personalizados de destaque, os clientes costumam dar 10% ou arredondar a conta.</li>
+        <li><strong>Europa Ocidental</strong>: A gorjeta é comedida e voluntária. Arredondar o valor ou deixar entre 5% e 10% por um bom trabalho é prática corrente.</li>
+        <li><strong>Austrália</strong>: As tarifas horárias refletem uma remuneração justa completa. A gorjeta não é esperada, embora pequenas gratificações em sessões longas sejam aceites.</li>
+        </ul>
+        </div>
+        <div class="doc-section">
+        <h2>9. Utilizar a ficha de consulta para impressão</h2>
+        <p>Esta ferramenta inclui uma folha de consulta numa única página, pronta para imprimir ou guardar em PDF. Resume as medidas escolhidas, a localização corporal, as opções técnicas, a estimativa de preço e as perguntas essenciais.</p>
+        <p>Leve a folha impressa para a consulta no estúdio. Serve de guia visual estruturado para conversar com o seu tatuador sobre as suas ideias e preços com clareza.</p>
+        </div>
+        <div class="doc-section">
+        <h2>10. De onde vêm os preços de 2026</h2>
+        <p>Não existe um inquérito oficial aos preços de tatuagens. Os intervalos desta ferramenta são estimativas editoriais, atualizadas em outubro de 2026 a partir de tabelas de preços de estúdios e guias de preços publicados em 2026. Estão arredondados e mudam: confirme sempre com o estúdio que escolher. Fontes, por mercado:</p>
+        <ul>
+        <li>Reino Unido (Média nacional UK): inknearyou.co.uk "Tattoo Prices UK 2026" and "Tattoo Artist Rates UK 2026"; Airtasker UK 2026 cost data; whatsthedamage.co.uk (2026).</li>
+        <li>Londres e Sudeste de Inglaterra (London): hammersmithtattoo.co.uk "Tattoo Prices in London (2026 Guide)"; inknearyou.co.uk "Tattoo Artist Rates UK 2026".</li>
+        <li>Estados Unidos (Média nacional US): tattoopiece.com, published rates of 41 US studios checked in August 2026 (median shop minimum $100, median low-end hourly rate $155); inkjin.com "Tattoo Cost in the US" (2026).</li>
+        <li>União Europeia (Europa Ocidental EU): kostenlupe.de and atmostudioberlin.com price list (Germany, 2026); tatouageia.fr and a Paris studio rate card cited by livementor.com (France, September 2026); tat2holics.com "Tattoo Prices Netherlands 2026".</li>
+        <li>Austrália (AU): Airtasker AU 2026 cost data; tattoonearme.com.au "Tattoo Price Guide Australia 2026".</li>
+        <li>Europa Central e de Leste: cenauslug.pl (Warsaw, 2026) and finelinetattoo.pl (Kraków, 2026), converted from złoty to euros and rounded.</li>
+        <li>Canadá: wildcranetattoos.com "Tattoo Cost in Toronto (2026)"; aminntattoo.ca "Vancouver 2026 Price Guide"; getinked.net "Tattoo Prices in British Columbia (2026)".</li>
+        <li>América do Sul (Brasil): agendzap.com.br price calculator (2026); aifortattoo.com/pt "Quanto Custa Tatuagem em 2026"; robozin.pro prices in 23 Brazilian cities.</li>
+        <li>Sudeste Asiático (Tailândia): alldaytattoo.com "Bangkok Tattoo Prices 2026"; bkkinktattoostudio.com price page (2026).</li>
+        </ul>
+        <p>O tempo por tamanho e os coeficientes de detalhe, cor, zona e nível do artista são estimativas editoriais; são proporções, não preços, e as fontes de 2026 não davam motivo para os alterar.</p>
+        </div>
+        <div class="doc-section">
+            <h2>Utilizar a ferramenta</h2>
+            <p><a href="https://poliinternational.com/tattoo-price-estimator/" target="_top">Abrir Guia de preços para o cliente e documentação</a>. Tudo funciona no seu navegador; nada do que introduz e enviado para fora.</p>
+        </div>
     </div>
 </body>
 </html>
