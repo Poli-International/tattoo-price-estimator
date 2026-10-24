@@ -233,18 +233,18 @@
     }
   </style>
   <script src="/js/input-guards.js"></script>
-  <script type="module" crossorigin src="/tools/tattoo-price-estimator/assets/index-CbnuqnID-ti.js"></script>
+  <script type="module" crossorigin src="/tools/tattoo-price-estimator/assets/index-dLLFpATu.js"></script>
   <link rel="stylesheet" crossorigin href="/tools/tattoo-price-estimator/assets/index-BAaO5mlF.css">
 </head>
 <body class="dark-mode">
   <div class="tool-tabs">
-    <button class="tool-tab active" data-tab="tool" id="tab-btn-tool"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-calc></use></svg> Tattoo Estimator</button>
+    <button class="tool-tab active" data-tab="tool" id="tab-btn-tool"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-calc></use></svg> <span data-sh="tab_tool">Tattoo Estimator</span></button>
     
-    <button class="tool-tab" data-tab="docs" id="tab-btn-docs"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-book></use></svg> Documentation</button>
-    <button class="tool-tab" data-tab="embed" id="tab-btn-embed"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-bolt></use></svg> Embed Code</button>
+    <button class="tool-tab" data-tab="docs" id="tab-btn-docs"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-book></use></svg> <span data-sh="tab_docs">Documentation</span></button>
+    <button class="tool-tab" data-tab="embed" id="tab-btn-embed"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-bolt></use></svg> <span data-sh="tab_embed">Embed Code</span></button>
   </div>
 
-  <!-- TAB 1: AI TATTOO PRICE ESTIMATOR -->
+  <!-- TAB 1: TATTOO PRICE ESTIMATOR -->
   <div id="tab-tool" class="wrapper-tab-content">
     <main class="tool-main-content">
       <div id="root"></div>
@@ -272,23 +272,14 @@
       
       <!-- Estimator Embed -->
       <div class="embed-card" style="padding: 2.5rem; border-radius: 1rem; text-align: left;">
-        <h2 class="embed-title" style="font-size: 1.4rem; margin-bottom: 0.5rem;">Embed AI Tattoo Price Estimator</h2>
-        <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">Add the AI Tattoo Pricing Estimator to your studio website or client consultation flow.</p>
-        <textarea id="embedCodeEstimator" class="embed-code-area" readonly>&lt;iframe src="/tools/tattoo-price-estimator/index.html" width="100%" height="1200" frameborder="0" style="border-radius:12px; border: 1px solid var(--border);"&gt;&lt;/iframe&gt;</textarea>
+        <h2 class="embed-title" style="font-size: 1.4rem; margin-bottom: 0.5rem;" data-sh="embed_title">Embed the Tattoo Price Estimator</h2>
+        <p style="margin-bottom: 1.5rem; font-size: 0.95rem;" data-sh="embed_desc">Add the Tattoo Price Estimator to your studio website or client consultation flow.</p>
+        <textarea id="embedCodeEstimator" class="embed-code-area" readonly>&lt;iframe src="https://poliinternational.com/tools/tattoo-price-estimator/index.html" width="100%" height="1200" frameborder="0" style="border-radius:12px; border: 1px solid var(--border);"&gt;&lt;/iframe&gt;</textarea>
         <div>
-          <button onclick="copyCode('embedCodeEstimator', this)" class="embed-copy-btn"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg> Copy Estimator Embed</button>
+          <button onclick="copyCode('embedCodeEstimator', this)" class="embed-copy-btn"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg> <span data-sh="embed_copy">Copy Estimator Embed</span></button>
         </div>
       </div>
 
-      <!-- Benchmark Embed -->
-      <div class="embed-card" style="padding: 2.5rem; border-radius: 1rem; text-align: left;">
-        <h2 class="embed-title" style="font-size: 1.4rem; margin-bottom: 0.5rem;">Embed Studio Pricing Benchmark</h2>
-        <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">Add the regional pricing benchmark tool to your artist portal or studio operations dashboard.</p>
-        
-        <div>
-          <button onclick="copyCode('embedCodeBenchmark', this)" class="embed-copy-btn"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg> Copy Benchmark Embed</button>
-        </div>
-      </div>
 
     </div>
   </div>
@@ -318,13 +309,38 @@
 
     
 
+    // Page shell text (outside the React app) in the tool's eight languages; follows the
+    // app's language through the poli-language event and the saved choice.
+    var SHELL = {
+      en: { tab_tool: 'Tattoo Estimator', tab_docs: 'Documentation', tab_embed: 'Embed Code', embed_title: 'Embed the Tattoo Price Estimator', embed_desc: 'Add the Tattoo Price Estimator to your studio website or client consultation flow.', embed_copy: 'Copy Estimator Embed', copied: 'Copied!' },
+      fr: { tab_tool: 'Estimateur de tatouage', tab_docs: 'Documentation', tab_embed: "Code d'intégration", embed_title: "Intégrer l'estimateur de prix de tatouage", embed_desc: "Ajoutez l'estimateur de prix de tatouage au site de votre studio ou à votre parcours de consultation.", embed_copy: "Copier le code d'intégration", copied: 'Copié !' },
+      it: { tab_tool: 'Stima tatuaggio', tab_docs: 'Documentazione', tab_embed: 'Codice di incorporamento', embed_title: 'Incorpora lo stimatore del prezzo del tatuaggio', embed_desc: 'Aggiungi lo stimatore del prezzo del tatuaggio al sito del tuo studio o al percorso di consulenza dei clienti.', embed_copy: 'Copia il codice', copied: 'Copiato!' },
+      de: { tab_tool: 'Tattoo-Preisrechner', tab_docs: 'Dokumentation', tab_embed: 'Einbettungscode', embed_title: 'Den Tattoo-Preisrechner einbetten', embed_desc: 'Binden Sie den Tattoo-Preisrechner in die Website Ihres Studios oder in Ihre Kundenberatung ein.', embed_copy: 'Einbettungscode kopieren', copied: 'Kopiert!' },
+      es: { tab_tool: 'Estimador de tatuajes', tab_docs: 'Documentación', tab_embed: 'Código para insertar', embed_title: 'Inserta el estimador de precios de tatuajes', embed_desc: 'Añade el estimador de precios de tatuajes a la web de tu estudio o a tu proceso de consulta con clientes.', embed_copy: 'Copiar código', copied: '¡Copiado!' },
+      nl: { tab_tool: 'Tattoo-prijsschatter', tab_docs: 'Documentatie', tab_embed: 'Insluitcode', embed_title: 'De tattoo-prijsschatter insluiten', embed_desc: 'Voeg de tattoo-prijsschatter toe aan de website van je studio of aan je klantgesprek.', embed_copy: 'Insluitcode kopiëren', copied: 'Gekopieerd!' },
+      pt: { tab_tool: 'Estimador de tatuagem', tab_docs: 'Documentação', tab_embed: 'Código de incorporação', embed_title: 'Incorporar o estimador de preços de tatuagem', embed_desc: 'Adicione o estimador de preços de tatuagem ao site do seu estúdio ou ao seu processo de consulta.', embed_copy: 'Copiar código', copied: 'Copiado!' },
+      th: { tab_tool: 'ประมาณราคารอยสัก', tab_docs: 'คู่มือการใช้งาน', tab_embed: 'โค้ดฝัง', embed_title: 'ฝังเครื่องมือประมาณราคารอยสัก', embed_desc: 'เพิ่มเครื่องมือประมาณราคารอยสักลงในเว็บไซต์ของสตูดิโอหรือขั้นตอนการปรึกษาลูกค้าของคุณ', embed_copy: 'คัดลอกโค้ดฝัง', copied: 'คัดลอกแล้ว' }
+    };
+    function shellLang() {
+      var l = (document.documentElement.lang || 'en').slice(0, 2).toLowerCase();
+      return SHELL[l] ? l : 'en';
+    }
+    function applyShell() {
+      var d = SHELL[shellLang()];
+      document.querySelectorAll('[data-sh]').forEach(function(el) {
+        var v = d[el.getAttribute('data-sh')];
+        if (v) el.textContent = v;
+      });
+    }
+    window.addEventListener('poli-language', applyShell);
+    applyShell();
     function copyCode(id, btn) {
       var textarea = document.getElementById(id);
       if (textarea) {
         textarea.select();
         document.execCommand('copy');
         var origHtml = btn.innerHTML;
-        btn.textContent = 'Copied!';
+        btn.textContent = SHELL[shellLang()].copied;
         setTimeout(function() {
           btn.innerHTML = origHtml;
         }, 2000);
