@@ -4,128 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentatie Tattoo-prijscalculator | Poli International</title>
-    <meta name="description" content="Complete handleiding voor het gebruik van de Tattoo-prijscalculator">
-    <link rel="canonical" href="https://poliinternational.com/tattoo-price-estimator-documentation/">
+    <meta name="description" content="Hoe deze calculator werkt, wat studioprijzen bepaalt en hoe je je voorbereidt op het adviesgesprek.">
+    <link rel="canonical" href="https://poliinternational.com/tattoo-price-estimator/">
     <style>
-        body { background: #0f0f0f !important; color: #fff !important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; }
-        body.in-iframe .doc-hero h1 { display: none !important; }
-        body.in-iframe .doc-hero { padding: 2rem 2rem !important; margin-bottom: 1rem !important; }
+        body { background: #0f0f0f; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; }
+        body.in-iframe .doc-hero h1 { display: none; }
         * { box-sizing: border-box; }
-        .entry-content { max-width: 900px !important; margin: 0 auto !important; padding: 2rem 1rem !important; }
-        .doc-hero { background: linear-gradient(135deg, #3B82F6, #8B5CF6) !important; padding: 4rem 2rem !important; text-align: center !important; margin: -2rem -1rem 3rem !important; border-radius: 0 !important; }
-        .doc-hero h1 { font-size: 2.5rem !important; color: #fff !important; margin: 0 0 1rem 0 !important; font-weight: 700 !important; }
-        .doc-hero p { font-size: 1.25rem !important; color: #E0E7FF !important; margin: 0 !important; }
-        .doc-section { margin: 3rem 0 !important; padding: 2rem !important; background: #1a1a1a !important; border-radius: 0.75rem !important; border-left: 4px solid #3B82F6 !important; }
-        .doc-section h2 { color: #3B82F6 !important; font-size: 2rem !important; margin: 0 0 1.5rem 0 !important; font-weight: 600 !important; }
-        .doc-section h3 { color: #8B5CF6 !important; font-size: 1.5rem !important; margin: 2rem 0 1rem 0 !important; font-weight: 600 !important; }
-        .doc-section p { color: #ccc !important; line-height: 1.8 !important; margin-bottom: 1rem !important; font-size: 1.05rem !important; }
-        .doc-section ul { margin: 1rem 0 !important; padding-left: 0 !important; list-style: none !important; }
-        .doc-section ul li { padding: 0.75rem 0 0.75rem 2rem !important; position: relative !important; color: #ccc !important; line-height: 1.6 !important; }
-        .doc-section ul li:before { content: "" !important; position: absolute !important; left: 0 !important; color: #10B981 !important; font-weight: bold !important; font-size: 1.2rem !important; }
-        .doc-section a { color: #3B82F6 !important; text-decoration: none !important; font-weight: 600 !important; transition: color 0.2s !important; }
-        .doc-section a:hover { color: #8B5CF6 !important; text-decoration: underline !important; }
-        .highlight-box { background: linear-gradient(135deg, #1E3A8A, #4C1D95) !important; padding: 1.5rem !important; border-radius: 0.5rem !important; margin: 2rem 0 !important; border-left: 4px solid #10B981 !important; }
-        .highlight-box p { color: #E0E7FF !important; margin-bottom: 0 !important; }
-        .back-link { display: inline-block !important; padding: 1rem 2rem !important; background: #3B82F6 !important; color: #fff !important; text-decoration: none !important; border-radius: 0.5rem !important; font-weight: 700 !important; margin-top: 2rem !important; transition: transform 0.2s !important; }
-        .back-link:hover { transform: scale(1.05) !important; background: #8B5CF6 !important; }
+        .entry-content { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+        .doc-hero { background: linear-gradient(135deg, #3B82F6, #8B5CF6); padding: 3rem 2rem; text-align: center; border-radius: 0.75rem; margin-bottom: 2rem; }
+        .doc-hero h1 { font-size: 2.2rem; margin: 0 0 1rem; font-weight: 700; }
+        .doc-hero p { font-size: 1.15rem; color: #E0E7FF; margin: 0; }
+        .doc-hero .v2 { display: inline-block; margin-bottom: 1rem; padding: 0.2rem 0.75rem; border-radius: 999px; background: #10B981; color: #04241a; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; }
+        .doc-section { margin: 2rem 0; padding: 2rem; background: #1a1a1a; border-radius: 0.75rem; border-left: 4px solid #3B82F6; }
+        .doc-section h2 { color: #60A5FA; font-size: 1.7rem; margin: 0 0 1.25rem; font-weight: 600; }
+        .doc-section h3 { color: #A78BFA; font-size: 1.3rem; margin: 1.75rem 0 0.75rem; font-weight: 600; }
+        .doc-section p, .doc-section li { color: #ccc; line-height: 1.75; font-size: 1.02rem; }
+        .doc-section ul, .doc-section ol { padding-left: 1.5rem; }
+        .doc-section li { margin: 0.4rem 0; }
+        .doc-section code { background: #2a2a2a; padding: 0.1rem 0.35rem; border-radius: 0.25rem; font-size: 0.92em; }
+        .doc-section a { color: #60A5FA; font-weight: 600; }
+        .highlight-box { background: linear-gradient(135deg, #1E3A8A, #4C1D95); padding: 1.25rem 1.5rem; border-radius: 0.5rem; margin: 1.5rem 0; border-left: 4px solid #10B981; }
+        .highlight-box p { color: #E0E7FF; margin: 0; }
         table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
-        th, td { padding: 1rem; text-align: left; border: 1px solid #333; }
-        th { background: #2a2a2a; color: #3B82F6; }
+        th, td { padding: 0.75rem; text-align: left; border: 1px solid #333; vertical-align: top; }
+        th { background: #2a2a2a; color: #60A5FA; }
         td { color: #ccc; }
+        .doc-langs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.5rem; font-size: 0.9rem; }
+        .doc-langs a, .doc-langs span { padding: 0.3rem 0.7rem; border-radius: 999px; border: 1px solid #333; text-decoration: none; }
+        .doc-langs a { color: #60A5FA; }
+        .doc-langs span { background: #1E3A8A; color: #E0E7FF; border-color: #1E3A8A; font-weight: 700; }
     </style>
 </head>
 <body>
-<nav class="doc-langs" aria-label="Taal van de documentatie" style="display:flex;flex-wrap:wrap;gap:6px 14px;max-width:900px;margin:12px auto 0;padding:0 16px;font-size:14px;"><a lang="en" href="documentation.html">English</a><a lang="fr" href="documentation-fr.html">Français</a><a lang="de" href="documentation-de.html">Deutsch</a><a lang="it" href="documentation-it.html">Italiano</a><a lang="es" href="documentation-es.html">Español</a><span lang="nl">Nederlands</span><a lang="pt" href="documentation-pt.html">Português</a><a lang="th" href="documentation-th.html">ไทย</a></nav>
-<script>
-    if (window.self !== window.top) { document.body.classList.add('in-iframe'); }
-</script>
+<script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>
     <div class="entry-content">
+        <nav class="doc-langs" aria-label="Documentation language"><a lang="en" href="documentation.html">English</a><a lang="fr" href="documentation-fr.html">Francais</a><a lang="de" href="documentation-de.html">Deutsch</a><a lang="es" href="documentation-es.html">Espanol</a><a lang="it" href="documentation-it.html">Italiano</a><span lang="nl">Nederlands</span><a lang="pt" href="documentation-pt.html">Portugues</a><a lang="th" href="documentation-th.html">ไทย</a></nav>
         <div class="doc-hero">
+            <span class="v2">V2</span>
             <h1>Tattoo-prijscalculator</h1>
-            <p>AI-gestuurde tattoo-prijscalculator met gedetailleerde kostenoverzichten</p>
+            <p>Hoe deze calculator werkt, wat studioprijzen bepaalt en hoe je je voorbereidt op het adviesgesprek.</p>
         </div>
-
         <div class="doc-section">
-            <h2>Overzicht</h2>
-            <p>De <strong>Tattoo-prijscalculator</strong> is een intelligente prijstool die eerlijke tattookosten berekent op basis van formaat, stijl, complexiteit, plaatsing en ervaring van de artiest. Het helpt artiesten nauwkeurige offertes te maken en helpt klanten de prijsfactoren te begrijpen.</p>
+        <h2>1. Doel en beperkingen</h2>
+        <p>De tattoo-prijsschatter geeft prijsklassen op basis van gangbare studiotarieven in negen markten: het VK, Londen, de VS, West-Europa, Australië, Centraal- en Oost-Europa, Canada, Brazilië en Thailand. Hij helpt je begrijpen wat de prijs bepaalt voordat je met een tatoeëerder praat.</p>
+        <p>Deze tool geeft bewust geen bindende offertes of vaste prijzen voor specifieke studio's. Tatoeëren is maatwerk. Tekenuren, lichaamsbouw, cover-ups, littekenweefsel en planning kunnen alleen in levenden lijve worden beoordeeld. Alleen de artiest die jouw tatoeage zet, kan een echte prijsopgave geven.</p>
         </div>
-
         <div class="doc-section">
-            <h2>Belangrijkste kenmerken</h2>
-            <ul>
-                <li><strong>Formaatberekening</strong> - Bereken vierkante inches en pas branchetarieven toe</li>
-                <li><strong>Stijlprijzen</strong> - Verschillende tarieven voor realistisch, traditioneel, geometrisch enz.</li>
-                <li><strong>Complexiteitsanalyse</strong> - Houdt rekening met detailniveau, kleur versus zwart-grijs</li>
-                <li><strong>Plaatsingsaanpassing</strong> - Houdt rekening met moeilijkheid op basis van lichaamslocatie</li>
-                <li><strong>Offertes voor meerdere sessies</strong> - Verdeel grote stukken in sessies</li>
-            </ul>
+        <h2>2. De zes prijsfactoren</h2>
+        <p>De tool berekent richtprijzen aan de hand van zes kernvariabelen die direct samenhangen met behandeltijd, materiaal of technische moeilijkheidsgraad:</p>
+        <h3>Geografische regio</h3>
+        <p>Vaste lasten en uurtarieven verschillen sterk per land en stad. Centraal London en grote Amerikaanse steden hanteren hogere basistarieven dan regionale plaatsen.</p>
+        <h3>Formaat van de tatoeage</h3>
+        <p>De afmeting bepaalt de basisduur in de stoel. Een heel klein ontwerp kost minder dan een uur machinetijd, terwijl een volledige sleeve of rugstuk tientallen uren verspreid over meerdere afspraken vergt.</p>
+        <h3>Detailniveau en dichtheid</h3>
+        <p>Minimalistische ontwerpen met open lijnen vergen veel minder naaldgangen dan fijne geometrische patronen, fineline-realisme, microportretten of volledig verzadigde zwarte vlakken.</p>
+        <h3>Kleurenpalet</h3>
+        <p>Black-and-grey maakt gebruik van grijswassingen met één pigment. Kleurenwerk vereist verschillende inkten, herhaaldelijk spoelen, wisselen van naaldcartridges en intensieve verzadiging, wat meer tijd kost.</p>
+        <h3>Plek op het lichaam</h3>
+        <p>Vlakke, gespierde delen zoals de buitenkant van de bovenarm maken het spannen van de huid en een ontspannen houding eenvoudig. Gevoelige zones zoals ribben, hals, handen of buik vereisen een rustiger tempo, adempauzes en lastige houdingen.</p>
+        <h3>Ervaring van de artiest</h3>
+        <p>Vaste studio-artiesten rekenen gebruikelijke regionale tarieven. Ervaren specialisten met veel vraag, internationale bekendheid of een eigen stijl hanteren hogere uur- of dagtarieven.</p>
         </div>
-
         <div class="doc-section">
-            <h2>Gebruik</h2>
-            <h3>1. Voer tattoo-details in</h3>
-            <p>Voer formaat, stijl en complexiteit van het ontwerp in.</p>
-            <h3>2. Kies de plaatsing</h3>
-            <p>Kies de lichaamslocatie om de moeilijkheid aan te passen.</p>
-            <h3>3. Stel uw tarieven in</h3>
-            <p>Configureer het uurtarief of het prijs per vierkante inch.</p>
-            <h3>4. Haal de offerte op</h3>
-            <p>Bekijk de gedetailleerde uitsplitsing met schattingen per sessie.</p>
+        <h2>3. De geschatte prijsrange lezen</h2>
+        <p>Elke schatting toont een minimum- en maximumbedrag. Deze spreiding weerspiegelt reële verschillen tussen studio's onderling:</p>
+        <ul>
+        <li><strong>Wat de prijs aan de onderkant houdt:</strong> Bestaande flash-ontwerpen, strakke plaatsing op vlakke huid, vlotte afronding in één sessie en standaardtarieven van resident-artiesten houden de kosten laag.</li>
+        <li><strong>Wat de prijs naar de bovenkant duwt:</strong> Vrijhandstekeningen op maat, complexe kleurovergangen, stugge huid, cover-ups, extra pauzes en veelgevraagde specialisten brengen de prijs richting de bovengrens.</li>
+        </ul>
         </div>
-
-                <div class="doc-section">
-            <h2>Praktische toepassingen</h2>
-            <div class="use-case">
-                <h3 style="color: #10B981 !important;">Voor studio-eigenaren</h3>
-                <p>Standaardiseer de technische protocollen en prijsmodellen van uw studio om consistentie te waarborgen tussen alle artiesten en residents.</p>
-            </div>
-            <div class="use-case">
-                <h3 style="color: #10B981 !important;">Voor leerlingen</h3>
-                <p>Gebruik deze tools als educatief kader om de complexe relatie tussen geometrie, biologie en procedurele veiligheid te begrijpen.</p>
-            </div>
-        </div><div class="doc-section">
-            <h2>Veelgestelde vragen</h2>
-            <div class="faq-item" style="margin-bottom: 1.5rem;">
-                <p><strong>Is de AI-prijs nauwkeurig voor alle regio's?</strong></p>
-                <p>De tool gebruikt wereldwijde branchegemiddelden. Wij raden aan het uurtarief in de instellingen aan te passen aan de lokale marktvraag.</p>
-            </div>
-            <div class="faq-item" style="margin-bottom: 1.5rem;">
-                <p><strong>Kan ik mijn gegenereerde ontwerpen opslaan?</strong></p>
-                <p>Momenteel zijn ontwerpen tijdelijk. Wij raden aan een screenshot te maken of de afbeelding rechtstreeks op uw apparaat op te slaan.</p>
-            </div>
-            <div class="faq-item" style="margin-bottom: 1.5rem;">
-                <p><strong>Houdt de tool rekening met cover-ups?</strong></p>
-                <p>Ja, door 'Hoge complexiteit' te kiezen en een plaatsingsnotitie voor littekenweefsel toe te voegen, wordt de tijdschatting dienovereenkomstig aangepast.</p>
-            </div>
-            <div class="faq-item" style="margin-bottom: 1.5rem;">
-                <p><strong>Welk AI-model drijft de beeldstudio aan?</strong></p>
-                <p>Wij gebruiken een aangepaste implementatie van het Gemini Pro Vision-model, geoptimaliseerd voor anatomische artistieke referentie.</p>
-            </div>
-            <div class="faq-item" style="margin-bottom: 1.5rem;">
-                <p><strong>Kunnen klanten deze tool gebruiken zonder artiest?</strong></p>
-                <p>Ja, hij is ontworpen om klanten te helpen de variabelen te begrijpen die in een professionele offerte komen, zodat er minder prijsschok is tijdens consulten.</p>
-            </div>
-        </div>        <div class="doc-section" style="text-align: center; border-left: none !important; background: linear-gradient(135deg, #111, #222) !important;">
-            <h2>Technische ondersteuning nodig?</h2>
-            <p>Als u problemen ondervindt met deze tool of hulp nodig heeft bij een maatwerkintegratie, staat ons engineeringteam voor u klaar.</p>
-            <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; align-items: center;">
-                <a href="https://poliinternational.com/contact-us/" class="btn-primary" style="padding: 1rem 2.5rem; text-decoration: none; border-radius: 0.5rem; background: #669eff; color: #FFFFFF !important; font-weight: 800; font-size: 1.1rem; border: none;">Neem contact op!</a>
-
-            </div>
-        </div>        <div style="text-align: center; margin-top: 4rem; padding: 2rem; border-top: 1px solid #333; opacity: 0.8;">
-            <p style="font-size: 0.95rem; color: #888; line-height: 1.6;">
-                Technische standaard aangeboden door <br/>
-                <a href="https://poliinternational.com/tattoo-price-estimator/" style="color: #3B82F6; text-decoration: none; font-weight: 800; font-size: 1.2rem; display: block; margin-top: 0.5rem;">Mogelijk gemaakt door Poli International Engineering</a>
-            </p>
-        </div>        <div class="doc-section">
-            <h2>Gerelateerde tools</h2>
-            <p>Ontdek meer professionele tools uit de engineeringsuite van Poli International:</p>
-            <ul>
-                <li><a href="/tattoo-price-estimator/">AI-prijscalculator</a> - Kosten &amp; beeldstudio</li>
-                <li><a href="/gauge-converter/">Naaldmaatomrekener</a> - Omrekening millimeter &amp; AWG</li>
-                <li><a href="/coverage-calculator/">Dekkingscalculator</a> - Inkt- &amp; sessieplanning</li>
-            </ul>
-        </div><div style="text-align: center; margin-bottom: 4rem;"><a href="https://poliinternational.com/tattoo-price-estimator/" class="back-link" style="display: inline-block !important;">← Naar de tool</a></div>
+        <div class="doc-section">
+        <h2>4. Het studiominimum</h2>
+        <p>Elke professionele studio hanteert een starttarief, zelfs voor een tatoeage die in tien minuten gezet is. Dit is geen willekeurig bedrag.</p>
+        <p>Elke ingreep vereist dezelfde steriele opzet: medische barrièrefolie, desinfectiemiddelen, steriele wegwerpnaaldcartridges, inktcups, gripcovers en autoclaafcontrole. Het klaarmaken en ontsmetten van de werkplek kost 20 tot 30 minuten werk en verbruiksmaterialen voordat de machine start. Het minimum waarborgt klinische hygiëne voor iedere klant.</p>
+        </div>
+        <div class="doc-section">
+        <h2>5. Aanbetaling en afspraakbevestiging</h2>
+        <p>Professionele studio's vragen vrijwel altijd een aanbetaling om tijd in de agenda van de artiest vast te leggen.</p>
+        <p>De aanbetaling garandeert studiotijd en vergoedt het voorbereidende tekenwerk voorafgaand aan je afspraak. Bij te late afzegging wordt deze niet gerestitueerd, maar het bedrag wordt op de dag zelf verrekend met het eindbedrag.</p>
+        </div>
+        <div class="doc-section">
+        <h2>6. Projecten in meerdere sessies</h2>
+        <p>Grote projecten zoals sleeves, borststukken en rugstukken kunnen niet verantwoord in één sessie worden gezet. Ze worden verdeeld in etappes: contouren, achtergrondschaduwen en kleurverzadiging.</p>
+        <p>Studio's plannen 3 tot 6 weken tussen sessies om de huid volledig te laten herstellen. Projecten met meerdere sessies worden meestal per afspraak of per dagtarief betaald, waardoor de kosten over enkele maanden worden gespreid.</p>
+        </div>
+        <div class="doc-section">
+        <h2>7. Vier vragen voor je adviesgesprek</h2>
+        <p>Gerichte vragen tijdens het eerste overleg scheppen duidelijke wederzijdse verwachtingen tussen jou en de artiest:</p>
+        <ul>
+        <li><strong>1. Prijsstructuur</strong>: Hanteer je voor dit project een vaste prijs, een uurtarief of een dagtarief?</li>
+        <li><strong>2. Tijdsindicatie</strong>: Hoeveel werkuren en afzonderlijke sessies verwacht je nodig te hebben voor deze tatoeage?</li>
+        <li><strong>3. Aanbetaling en bijwerken</strong>: Hoe hoog is de aanbetaling, wat is de annuleringstermijn en is bijwerken na genezing inbegrepen?</li>
+        <li><strong>4. Advies over plaatsing en schaal</strong>: Raad je gezien mijn idee en lichaamsbouw aan om het formaat of de looprichting aan te passen voor een langere houdbaarheid?</li>
+        </ul>
+        </div>
+        <div class="doc-section">
+        <h2>8. Fooien en gewoonten</h2>
+        <p>Fooiengewoonten variëren per land. Een fooi is nooit verplicht, maar kennis van plaatselijke gebruiken geeft houvast bij het afrekenen:</p>
+        <ul>
+        <li><strong>Verenigde Staten</strong>: Een fooi is gebruikelijk en wordt verwacht. Tevreden klanten geven doorgaans 15% tot 20% van het sessiebedrag, rechtstreeks contant aan de artiest.</li>
+        <li><strong>Verenigd Koninkrijk</strong>: Een fooi wordt gewaardeerd maar is geheel vrijblijvend. Bij bijzonder maatwerk ronden klanten het bedrag vaak af met circa 10%.</li>
+        <li><strong>West-Europa</strong>: Fooien zijn bescheiden en ter eigen beoordeling. Afronden naar boven of 5% tot 10% geven bij een geslaagde ervaring is gebruikelijk.</li>
+        <li><strong>Australië</strong>: De uurtarieven dekken een volledige en eerlijke beloning. Fooien worden niet verwacht, al wordt een attentie na een lange sessie gewaardeerd.</li>
+        </ul>
+        </div>
+        <div class="doc-section">
+        <h2>9. Gebruik van het printbare adviesblad</h2>
+        <p>Deze tool bevat een overzichtelijk adviesblad op één pagina, geschikt om te printen of op te slaan als PDF. Het vat formaat, lichaamsplek, detailkeuzes, prijsindicatie en kernvragen overzichtelijk samen.</p>
+        <p>Neem het afgedrukte blad mee naar je afspraak in de studio. Het biedt een heldere leidraad om je wensen en de prijs met je tatoeëerder te bespreken.</p>
+        </div>
+        <div class="doc-section">
+        <h2>10. Waar de prijzen van 2026 vandaan komen</h2>
+        <p>Er bestaat geen officieel onderzoek naar tattooprijzen. De bandbreedtes in deze tool zijn redactionele schattingen, in oktober 2026 bijgewerkt op basis van prijslijsten van studio’s en prijsgidsen uit 2026. Ze zijn afgerond en veranderen: vraag het altijd na bij de studio die je kiest. Bronnen, per markt:</p>
+        <ul>
+        <li>Verenigd Koninkrijk (UK landelijk gemiddelde): inknearyou.co.uk "Tattoo Prices UK 2026" and "Tattoo Artist Rates UK 2026"; Airtasker UK 2026 cost data; whatsthedamage.co.uk (2026).</li>
+        <li>Londen &amp; Zuidoost-Engeland (London): hammersmithtattoo.co.uk "Tattoo Prices in London (2026 Guide)"; inknearyou.co.uk "Tattoo Artist Rates UK 2026".</li>
+        <li>Verenigde Staten (US landelijk gemiddelde): tattoopiece.com, published rates of 41 US studios checked in August 2026 (median shop minimum $100, median low-end hourly rate $155); inkjin.com "Tattoo Cost in the US" (2026).</li>
+        <li>Europese Unie (West-Europa EU): kostenlupe.de and atmostudioberlin.com price list (Germany, 2026); tatouageia.fr and a Paris studio rate card cited by livementor.com (France, September 2026); tat2holics.com "Tattoo Prices Netherlands 2026".</li>
+        <li>Australië (AU): Airtasker AU 2026 cost data; tattoonearme.com.au "Tattoo Price Guide Australia 2026".</li>
+        <li>Centraal- en Oost-Europa: cenauslug.pl (Warsaw, 2026) and finelinetattoo.pl (Kraków, 2026), converted from złoty to euros and rounded.</li>
+        <li>Canada: wildcranetattoos.com "Tattoo Cost in Toronto (2026)"; aminntattoo.ca "Vancouver 2026 Price Guide"; getinked.net "Tattoo Prices in British Columbia (2026)".</li>
+        <li>Zuid-Amerika (Brazilië): agendzap.com.br price calculator (2026); aifortattoo.com/pt "Quanto Custa Tatuagem em 2026"; robozin.pro prices in 23 Brazilian cities.</li>
+        <li>Zuidoost-Azië (Thailand): alldaytattoo.com "Bangkok Tattoo Prices 2026"; bkkinktattoostudio.com price page (2026).</li>
+        </ul>
+        <p>De tijd per formaat en de factoren voor detail, kleur, plaatsing en artiestniveau zijn redactionele schattingen; het zijn verhoudingen, geen prijzen, en de bronnen uit 2026 gaven geen reden om ze te wijzigen.</p>
+        </div>
+        <div class="doc-section">
+            <h2>De tool gebruiken</h2>
+            <p><a href="https://poliinternational.com/tattoo-price-estimator/" target="_top">Open Klantengids voor prijzen en documentatie</a>. Alles werkt in uw browser; niets van wat u invult wordt verzonden.</p>
+        </div>
     </div>
 </body>
 </html>
