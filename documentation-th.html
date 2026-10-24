@@ -4,128 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>เอกสารประกอบ Tattoo Price Estimator | Poli International</title>
-    <meta name="description" content="คู่มือฉบับสมบูรณ์สำหรับการใช้งาน Tattoo Price Estimator">
-    <link rel="canonical" href="https://poliinternational.com/tattoo-price-estimator-documentation/">
+    <meta name="description" content="เครื่องมือนี้ทำงานอย่างไร อะไรกำหนดราคาของสตูดิโอ และวิธีเตรียมตัวสำหรับการปรึกษา">
+    <link rel="canonical" href="https://poliinternational.com/tattoo-price-estimator/">
     <style>
-        body { background: #0f0f0f !important; color: #fff !important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; }
-        body.in-iframe .doc-hero h1 { display: none !important; }
-        body.in-iframe .doc-hero { padding: 2rem 2rem !important; margin-bottom: 1rem !important; }
+        body { background: #0f0f0f; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; }
+        body.in-iframe .doc-hero h1 { display: none; }
         * { box-sizing: border-box; }
-        .entry-content { max-width: 900px !important; margin: 0 auto !important; padding: 2rem 1rem !important; }
-        .doc-hero { background: linear-gradient(135deg, #3B82F6, #8B5CF6) !important; padding: 4rem 2rem !important; text-align: center !important; margin: -2rem -1rem 3rem !important; border-radius: 0 !important; }
-        .doc-hero h1 { font-size: 2.5rem !important; color: #fff !important; margin: 0 0 1rem 0 !important; font-weight: 700 !important; }
-        .doc-hero p { font-size: 1.25rem !important; color: #E0E7FF !important; margin: 0 !important; }
-        .doc-section { margin: 3rem 0 !important; padding: 2rem !important; background: #1a1a1a !important; border-radius: 0.75rem !important; border-left: 4px solid #3B82F6 !important; }
-        .doc-section h2 { color: #3B82F6 !important; font-size: 2rem !important; margin: 0 0 1.5rem 0 !important; font-weight: 600 !important; }
-        .doc-section h3 { color: #8B5CF6 !important; font-size: 1.5rem !important; margin: 2rem 0 1rem 0 !important; font-weight: 600 !important; }
-        .doc-section p { color: #ccc !important; line-height: 1.8 !important; margin-bottom: 1rem !important; font-size: 1.05rem !important; }
-        .doc-section ul { margin: 1rem 0 !important; padding-left: 0 !important; list-style: none !important; }
-        .doc-section ul li { padding: 0.75rem 0 0.75rem 2rem !important; position: relative !important; color: #ccc !important; line-height: 1.6 !important; }
-        .doc-section ul li:before { content: "" !important; position: absolute !important; left: 0 !important; color: #10B981 !important; font-weight: bold !important; font-size: 1.2rem !important; }
-        .doc-section a { color: #3B82F6 !important; text-decoration: none !important; font-weight: 600 !important; transition: color 0.2s !important; }
-        .doc-section a:hover { color: #8B5CF6 !important; text-decoration: underline !important; }
-        .highlight-box { background: linear-gradient(135deg, #1E3A8A, #4C1D95) !important; padding: 1.5rem !important; border-radius: 0.5rem !important; margin: 2rem 0 !important; border-left: 4px solid #10B981 !important; }
-        .highlight-box p { color: #E0E7FF !important; margin-bottom: 0 !important; }
-        .back-link { display: inline-block !important; padding: 1rem 2rem !important; background: #3B82F6 !important; color: #fff !important; text-decoration: none !important; border-radius: 0.5rem !important; font-weight: 700 !important; margin-top: 2rem !important; transition: transform 0.2s !important; }
-        .back-link:hover { transform: scale(1.05) !important; background: #8B5CF6 !important; }
+        .entry-content { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+        .doc-hero { background: linear-gradient(135deg, #3B82F6, #8B5CF6); padding: 3rem 2rem; text-align: center; border-radius: 0.75rem; margin-bottom: 2rem; }
+        .doc-hero h1 { font-size: 2.2rem; margin: 0 0 1rem; font-weight: 700; }
+        .doc-hero p { font-size: 1.15rem; color: #E0E7FF; margin: 0; }
+        .doc-hero .v2 { display: inline-block; margin-bottom: 1rem; padding: 0.2rem 0.75rem; border-radius: 999px; background: #10B981; color: #04241a; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; }
+        .doc-section { margin: 2rem 0; padding: 2rem; background: #1a1a1a; border-radius: 0.75rem; border-left: 4px solid #3B82F6; }
+        .doc-section h2 { color: #60A5FA; font-size: 1.7rem; margin: 0 0 1.25rem; font-weight: 600; }
+        .doc-section h3 { color: #A78BFA; font-size: 1.3rem; margin: 1.75rem 0 0.75rem; font-weight: 600; }
+        .doc-section p, .doc-section li { color: #ccc; line-height: 1.75; font-size: 1.02rem; }
+        .doc-section ul, .doc-section ol { padding-left: 1.5rem; }
+        .doc-section li { margin: 0.4rem 0; }
+        .doc-section code { background: #2a2a2a; padding: 0.1rem 0.35rem; border-radius: 0.25rem; font-size: 0.92em; }
+        .doc-section a { color: #60A5FA; font-weight: 600; }
+        .highlight-box { background: linear-gradient(135deg, #1E3A8A, #4C1D95); padding: 1.25rem 1.5rem; border-radius: 0.5rem; margin: 1.5rem 0; border-left: 4px solid #10B981; }
+        .highlight-box p { color: #E0E7FF; margin: 0; }
         table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
-        th, td { padding: 1rem; text-align: left; border: 1px solid #333; }
-        th { background: #2a2a2a; color: #3B82F6; }
+        th, td { padding: 0.75rem; text-align: left; border: 1px solid #333; vertical-align: top; }
+        th { background: #2a2a2a; color: #60A5FA; }
         td { color: #ccc; }
+        .doc-langs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.5rem; font-size: 0.9rem; }
+        .doc-langs a, .doc-langs span { padding: 0.3rem 0.7rem; border-radius: 999px; border: 1px solid #333; text-decoration: none; }
+        .doc-langs a { color: #60A5FA; }
+        .doc-langs span { background: #1E3A8A; color: #E0E7FF; border-color: #1E3A8A; font-weight: 700; }
     </style>
 </head>
 <body>
-<nav class="doc-langs" aria-label="ภาษาของเอกสาร" style="display:flex;flex-wrap:wrap;gap:6px 14px;max-width:900px;margin:12px auto 0;padding:0 16px;font-size:14px;"><a lang="en" href="documentation.html">English</a><a lang="fr" href="documentation-fr.html">Français</a><a lang="de" href="documentation-de.html">Deutsch</a><a lang="it" href="documentation-it.html">Italiano</a><a lang="es" href="documentation-es.html">Español</a><a lang="nl" href="documentation-nl.html">Nederlands</a><a lang="pt" href="documentation-pt.html">Português</a><span lang="th">ไทย</span></nav>
-<script>
-    if (window.self !== window.top) { document.body.classList.add('in-iframe'); }
-</script>
+<script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>
     <div class="entry-content">
+        <nav class="doc-langs" aria-label="Documentation language"><a lang="en" href="documentation.html">English</a><a lang="fr" href="documentation-fr.html">Francais</a><a lang="de" href="documentation-de.html">Deutsch</a><a lang="es" href="documentation-es.html">Espanol</a><a lang="it" href="documentation-it.html">Italiano</a><a lang="nl" href="documentation-nl.html">Nederlands</a><a lang="pt" href="documentation-pt.html">Portugues</a><span lang="th">ไทย</span></nav>
         <div class="doc-hero">
+            <span class="v2">V2</span>
             <h1>เครื่องประเมินราคาสัก<br><small lang="en" style="font-size:0.55em;font-weight:500;opacity:0.75;">Tattoo Price Estimator</small></h1>
-            <p>เครื่องคำนวณราคาการสักลายที่ขับเคลื่อนด้วย AI พร้อมรายละเอียดค่าใช้จ่ายอย่างละเอียด</p>
+            <p>เครื่องมือนี้ทำงานอย่างไร อะไรกำหนดราคาของสตูดิโอ และวิธีเตรียมตัวสำหรับการปรึกษา</p>
         </div>
-
         <div class="doc-section">
-            <h2>ภาพรวม</h2>
-            <p><strong>เครื่องประมาณราคาการสักลาย</strong> (Tattoo Price Estimator) เป็นเครื่องมือกำหนดราคาอัจฉริยะที่คำนวณค่าสักลายที่เป็นธรรมตามขนาด สไตล์ ความซับซ้อน ตำแหน่งบนร่างกาย และประสบการณ์ของศิลปิน ช่วยให้ศิลปินเสนอราคาได้อย่างแม่นยำ และช่วยให้ลูกค้าเข้าใจปัจจัยที่ส่งผลต่อราคา</p>
+        <h2>1. วัตถุประสงค์และข้อจำกัด</h2>
+        <p>เครื่องมือประมาณราคารอยสักแสดงช่วงราคาตามอัตราทั่วไปของสตูดิโอใน 9 ตลาด ได้แก่ สหราชอาณาจักร ลอนดอน สหรัฐอเมริกา ยุโรปตะวันตก ออสเตรเลีย ยุโรปกลางและตะวันออก แคนาดา บราซิล และไทย ช่วยให้คุณเข้าใจปัจจัยที่กำหนดราคาก่อนพูดคุยกับช่างสัก</p>
+        <p>เครื่องมือนี้ตั้งใจไม่ให้ใบเสนอราคาที่มีผลผูกพัน และไม่ได้กำหนดราคาของสตูดิโอ การสักเป็นงานฝีมือที่ออกแบบเฉพาะบุคคล การออกแบบเฉพาะ รูปร่างของร่างกาย การปกปิดรอยสักเดิม รอยแผลเป็น และตารางงานของช่างสัก สามารถประเมินได้เมื่อพบตัวจริงเท่านั้น มีเพียงช่างสักที่จะทำรอยสักของคุณเท่านั้นที่ให้ใบเสนอราคาที่แท้จริงได้</p>
         </div>
-
         <div class="doc-section">
-            <h2>คุณสมบัติหลัก</h2>
-            <ul>
-                <li><strong>การคำนวณขนาด</strong> - คำนวณพื้นที่เป็นตารางนิ้วและใช้อัตราราคามาตรฐานของอุตสาหกรรม</li>
-                <li><strong>ราคาตามสไตล์</strong> - อัตราที่แตกต่างกันสำหรับสมจริง แบบดั้งเดิม เรขาคณิต ฯลฯ</li>
-                <li><strong>การวิเคราะห์ความซับซ้อน</strong> - พิจารณาระดับรายละเอียด และเปรียบเทียบสีกับขาวดำ/เทา</li>
-                <li><strong>การปรับตามตำแหน่ง</strong> - คำนึงถึงความยากตามตำแหน่งบนร่างกาย</li>
-                <li><strong>ใบเสนอราคาหลายครั้ง</strong> - แบ่งงานชิ้นใหญ่ออกเป็นหลายครั้ง</li>
-            </ul>
+        <h2>2. ปัจจัยราคาทั้งหกอย่าง</h2>
+        <p>เครื่องมือคำนวณช่วงราคาจากตัวแปรหลักหกอย่าง ซึ่งแต่ละอย่างสะท้อนเวลาในสตูดิโอ วัสดุ หรือความยากทางเทคนิค:</p>
+        <h3>ภูมิภาค</h3>
+        <p>ค่าใช้จ่ายในการดำเนินงานของสตูดิโอและอัตราทั่วไปแตกต่างกันไปตามประเทศและเมือง ใจกลางลอนดอนและเมืองใหญ่ของสหรัฐฯ มีอัตราต่อชั่วโมงพื้นฐานสูงกว่าเมืองในภูมิภาค</p>
+        <h3>ขนาดของรอยสัก</h3>
+        <p>ขนาดกำหนดเวลาพื้นฐานบนเก้าอี้สัก รอยสักขนาดเล็กมากใช้เวลาไม่ถึงหนึ่งชั่วโมง ส่วนแขนเต็มหรือแผ่นหลังกินเวลาหลายสิบชั่วโมงข้ามหลายนัด</p>
+        <h3>รายละเอียดและความหนาแน่น</h3>
+        <p>แบบเรียบง่ายที่มีเส้นโปร่งต้องใช้จำนวนครั้งของเข็มน้อยกว่าลวดลายเรขาคณิตที่ซับซ้อน ภาพเหมือนจริงแบบเส้นละเอียด ภาพเหมือนขนาดจิ๋ว หรืองานดำทึบ (blackwork) ที่เข้มข้น</p>
+        <h3>ชุดสี</h3>
+        <p>งานขาวดำใช้การไล่เฉดด้วยเม็ดสีเดียว ส่วนงานสีเต็มต้องใช้หมึกหลายสีที่แยกกัน มีการล้างบ่อย เปลี่ยนตลับเข็ม และอัดสีแน่น ทำให้เวลาบนเก้าอี้สักรวมเพิ่มขึ้น</p>
+        <h3>ตำแหน่งบนร่างกาย</h3>
+        <p>พื้นที่แบนและมีกล้ามเนื้อ เช่น ต้นแขนด้านนอก ช่วยให้ยืดผิวได้สม่ำเสมอและท่านั่งผ่อนคลาย ส่วนที่โค้งหรือบอบบาง เช่น ซี่โครง คอ มือ หรือท้อง ต้องใช้จังหวะทางเทคนิคที่ตั้งใจ มีช่วงให้ลูกค้าหายใจ และท่าทางที่ยากกว่า</p>
+        <h3>ความอาวุโสของช่างสัก</h3>
+        <p>ช่างประจำมาตรฐานคิดอัตราทั่วไปของภูมิภาค ส่วนช่างอาวุโสและช่างเฉพาะทางที่มีความต้องการสูง มีชื่อเสียงระดับนานาชาติ หรือมีสไตล์เฉพาะตัว จะคิดอัตรารายชั่วโมงหรืออัตรารายวันในระดับพรีเมียม</p>
         </div>
-
         <div class="doc-section">
-            <h2>วิธีใช้งาน</h2>
-            <h3>1. กรอกรายละเอียดของรอยสัก</h3>
-            <p>กรอกข้อมูลขนาด สไตล์ และความซับซ้อนของแบบ</p>
-            <h3>2. เลือกตำแหน่ง</h3>
-            <p>เลือกตำแหน่งบนร่างกายเพื่อปรับระดับความยาก</p>
-            <h3>3. กำหนดอัตราของคุณ</h3>
-            <p>ตั้งค่าอัตราต่อชั่วโมง หรือราคาต่อตารางนิ้ว</p>
-            <h3>4. รับใบเสนอราคา</h3>
-            <p>ดูรายละเอียดการคำนวณพร้อมประมาณจำนวนครั้งในการสัก</p>
+        <h2>3. วิธีอ่านช่วงราคาโดยประมาณ</h2>
+        <p>การประมาณการแต่ละครั้งแสดงตัวเลขต่ำและสูง ช่วงนี้สะท้อนความแตกต่างที่เป็นจริงระหว่างสตูดิโอที่คุณจะพบเจอ:</p>
+        <ul>
+        <li><strong>สิ่งที่ทำให้ใบเสนอราคาอยู่ใกล้ปลายล่าง:</strong> แบบ flash ที่วาดไว้ล่วงหน้า การวางสเตนซิลบนผิวเรียบอย่างเรียบร้อย การสักที่เสร็จในนัดเดียวแบบไม่ซับซ้อน และอัตราของช่างประจำสตูดิโอมาตรฐาน ทำให้ใบเสนอราคาอยู่ใกล้ขอบล่าง</li>
+        <li><strong>สิ่งที่ดันใบเสนอราคาไปทางปลายบน:</strong> การวาดแบบฟรีแฮนด์ตามคำขอ การผสมสีที่หนาแน่น พื้นผิวผิวหนังที่ยาก งานปกปิดรอยเดิม การทำช้าลงเพื่อความสบายของลูกค้า และช่างเฉพาะทาง ทำให้ใบเสนอราคาขยับไปทางขอบบน</li>
+        </ul>
         </div>
-
-                <div class="doc-section">
-            <h2>กรณีการใช้งานจริง</h2>
-            <div class="use-case">
-                <h3 style="color: #10B981 !important;">สำหรับเจ้าของสตูดิโอ</h3>
-                <p>กำหนดมาตรฐานขั้นตอนทางเทคนิคและรูปแบบการตั้งราคาของสตูดิโอ เพื่อให้ศิลปินและเรสซิเดนต์ทุกคนทำงานได้สอดคล้องกัน</p>
-            </div>
-            <div class="use-case">
-                <h3 style="color: #10B981 !important;">สำหรับผู้ฝึกงาน</h3>
-                <p>ใช้เครื่องมือนี้เป็นกรอบการเรียนรู้เพื่อทำความเข้าใจความสัมพันธ์ที่ซับซ้อนระหว่างเรขาคณิต ชีววิทยา และความปลอดภัยของขั้นตอนการทำงาน</p>
-            </div>
-        </div><div class="doc-section">
-            <h2>คำถามที่พบบ่อย</h2>
-            <div class="faq-item" style="margin-bottom: 1.5rem;">
-                <p><strong>ราคาจาก AI แม่นยำสำหรับทุกภูมิภาคหรือไม่?</strong></p>
-                <p>เครื่องมือใช้ค่าเฉลี่ยของอุตสาหกรรมทั่วโลก เราแนะนำให้ปรับอัตราต่อชั่วโมงในการตั้งค่าให้สอดคล้องกับความต้องการของตลาดท้องถิ่นของคุณ</p>
-            </div>
-            <div class="faq-item" style="margin-bottom: 1.5rem;">
-                <p><strong>ฉันบันทึกแบบที่สร้างขึ้นได้หรือไม่?</strong></p>
-                <p>ปัจจุบันแบบจะเป็นการชั่วคราว เราแนะนำให้แคปหน้าจอหรือบันทึกภาพลงในอุปกรณ์ของคุณโดยตรงเพื่อใช้อ้างอิง</p>
-            </div>
-            <div class="faq-item" style="margin-bottom: 1.5rem;">
-                <p><strong>เครื่องมือคำนึงถึงการปกปิดรอยสักเก่า (cover-ups) หรือไม่?</strong></p>
-                <p>คำนึงถึง: การเลือก 'ความซับซ้อนสูง' และเพิ่มหมายเหตุตำแหน่งสำหรับเนื้อเยื่อแผลเป็นจะปรับการประมาณเวลาให้สอดคล้องกัน</p>
-            </div>
-            <div class="faq-item" style="margin-bottom: 1.5rem;">
-                <p><strong>โมเดล AI ใดขับเคลื่อนสตูดิโอภาพ?</strong></p>
-                <p>เราใช้การติดตั้งโมเดล Gemini Pro Vision ที่ปรับแต่งเอง ซึ่งเหมาะสำหรับการอ้างอิงทางศิลปะด้านกายวิภาค</p>
-            </div>
-            <div class="faq-item" style="margin-bottom: 1.5rem;">
-                <p><strong>ลูกค้าใช้เครื่องมือนี้ได้โดยไม่ต้องมีศิลปินหรือไม่?</strong></p>
-                <p>ได้ เครื่องมือนี้ออกแบบมาเพื่อช่วยให้ลูกค้าเข้าใจตัวแปรที่อยู่ในใบเสนอราคาแบบมืออาชีพ ลดความตกใจด้านราคาระหว่างการปรึกษา</p>
-            </div>
-        </div>        <div class="doc-section" style="text-align: center; border-left: none !important; background: linear-gradient(135deg, #111, #222) !important;">
-            <h2>ต้องการความช่วยเหลือทางเทคนิคหรือไม่?</h2>
-            <p>หากพบปัญหากับเครื่องมือนี้ หรือต้องการความช่วยเหลือในการผสานระบบแบบกำหนดเอง ทีมวิศวกรรมของเราพร้อมช่วยเหลือ</p>
-            <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; align-items: center;">
-                <a href="https://poliinternational.com/contact-us/" class="btn-primary" style="padding: 1rem 2.5rem; text-decoration: none; border-radius: 0.5rem; background: #669eff; color: #FFFFFF !important; font-weight: 800; font-size: 1.1rem; border: none;">ติดต่อเรา!</a>
-
-            </div>
-        </div>        <div style="text-align: center; margin-top: 4rem; padding: 2rem; border-top: 1px solid #333; opacity: 0.8;">
-            <p style="font-size: 0.95rem; color: #888; line-height: 1.6;">
-                มาตรฐานทางเทคนิคโดย <br/>
-                <a href="https://poliinternational.com/tattoo-price-estimator/" style="color: #3B82F6; text-decoration: none; font-weight: 800; font-size: 1.2rem; display: block; margin-top: 0.5rem;">ขับเคลื่อนโดย Poli International Engineering</a>
-            </p>
-        </div>        <div class="doc-section">
-            <h2>เครื่องมือที่เกี่ยวข้อง</h2>
-            <p>ค้นหาเครื่องมือมืออาชีพเพิ่มเติมจากชุดเครื่องมือวิศวกรรมของ Poli International:</p>
-            <ul>
-                <li><a href="/tattoo-price-estimator/">เครื่องประมาณราคาด้วย AI</a> - ค่าใช้จ่ายและสตูดิโอภาพ</li>
-                <li><a href="/gauge-converter/">เครื่องแปลงขนาดเข็ม</a> - การแปลงมิลลิเมตรและ AWG</li>
-                <li><a href="/coverage-calculator/">เครื่องคำนวณพื้นที่ครอบคลุม</a> - การวางแผนหมึกและจำนวนครั้ง</li>
-            </ul>
-        </div><div style="text-align: center; margin-bottom: 4rem;"><a href="https://poliinternational.com/tattoo-price-estimator/" class="back-link" style="display: inline-block !important;">← ไปที่เครื่องมือ</a></div>
+        <div class="doc-section">
+        <h2>4. ราคาขั้นต่ำของร้าน</h2>
+        <p>สตูดิโอมืออาชีพทุกแห่งกำหนดราคาขั้นต่ำของร้าน แม้งานที่ใช้เวลาเพียงสิบนาที นี่ไม่ใช่ค่าใช้จ่ายที่กำหนดขึ้นโดยพลการ</p>
+        <p>ทุกขั้นตอนต้องเตรียมอุปกรณ์ปลอดเชื้อแบบเดียวกัน ได้แก่ ฟิล์มกั้นระดับการแพทย์ น้ำยาฆ่าเชื้อบนพื้นผิว เตลับเข็มใช้ครั้งเดียว ฝาครอบหมึก ผ้าพันด้ามจับ และการฆ่าเชื้อด้วยหม้ออัดไอน้ำ (autoclave) การเตรียมและทำความสะอาดสถานีใช้เวลา 20 ถึง 30 นาทีของแรงงานและวัสดุทางการแพทย์ ก่อนเริ่มงานเข็ม ราคาขั้นต่ำช่วยให้มาตรฐานความสะอาดระดับโรงพยาบาลคงอยู่สำหรับลูกค้าทุกคน</p>
+        </div>
+        <div class="doc-section">
+        <h2>5. เงินมัดจำและข้อผูกพันการจอง</h2>
+        <p>สตูดิโอมืออาชีพต้องการเงินมัดจำการจองทุกแห่ง เพื่อสงวนเวลานัดในปฏิทินของช่างสัก</p>
+        <p>เงินมัดจำสงวนเวลาในสตูดิโอโดยเฉพาะ และชดเชยงานวาดแบบเฉพาะที่ทำก่อนรอบการสักของคุณ เงินมัดจำไม่คืนหากคุณยกเลิกโดยไม่แจ้งล่วงหน้าเพียงพอ แต่โดยทั่วไปจะถูกหักจากราคาสุดท้ายในวันที่สักรอยของคุณ</p>
+        </div>
+        <div class="doc-section">
+        <h2>6. โครงการหลายรอบ</h2>
+        <p>โครงการขนาดใหญ่ เช่น แขนเสื้อ แผงหน้าอก และแผ่นหลัง ไม่สามารถทำให้เสร็จอย่างปลอดภัยในรอบเดียว จึงแบ่งเป็นขั้นตอนที่แยกกัน ได้แก่ การลากเส้นร่าง การไล่เฉดพื้นหลัง และการอัดสีขั้นสุดท้าย</p>
+        <p>สตูดิโอเว้นระยะแต่ละรอบ 3 ถึง 6 สัปดาห์ เพื่อให้ผิวหนังชั้นในและเนื้อเยื่อฟื้นตัว งานหลายรอบมักคิดราคาต่อรอบหรือตามอัตรารายวัน ทำให้ค่าใช้จ่ายกระจายไปหลายเดือน</p>
+        </div>
+        <div class="doc-section">
+        <h2>7. คำถามสี่ข้อที่ควรนำไปถามในการปรึกษา</h2>
+        <p>การนำคำถามเฉพาะเจาะจงไปถามในการปรึกษาช่วยให้คุณและช่างสักมีความเข้าใจที่ชัดเจนตรงกัน:</p>
+        <ul>
+        <li><strong>1. โครงสร้างราคา</strong>: คุณคิดราคาโปรเจกต์นี้เป็นใบเสนอราคาเหมาชิ้น รายชั่วโมง หรือเป็นรอบการสักเต็มวันหรือไม่?</li>
+        <li><strong>2. ความคาดหวังด้านเวลา</strong>: ชิ้นงานนี้คาดว่าจะใช้เวลารวมกี่ชั่วโมงและกี่รอบ?</li>
+        <li><strong>3. นโยบายเงินมัดจำและการแก้ไข</strong>: เงินมัดจำจำนวนเท่าไร ระยะเวลาแจ้งยกเลิกเท่าไร และรวมการแก้ไขหลังแผลหายแล้วหรือไม่?</li>
+        <li><strong>4. คำแนะนำเรื่องตำแหน่งและการปรับขนาด</strong>: จากแนวคิดและโครงสร้างร่างกายของฉัน การปรับขนาดหรือทิศทางการไหลของลายเส้นจะช่วยให้คงทนขึ้นหรือไม่?</li>
+        </ul>
+        </div>
+        <div class="doc-section">
+        <h2>8. มารยาทและธรรมเนียมการให้ทิป</h2>
+        <p>ธรรมเนียมการให้ทิปแตกต่างกันไปในแต่ละประเทศ การให้ทิปไม่เคยเป็นข้อบังคับ แต่การเข้าใจธรรมเนียมท้องถิ่นช่วยให้คุณชำระเงินได้อย่างมั่นใจ:</p>
+        <ul>
+        <li><strong>สหรัฐอเมริกา</strong>: การให้ทิปเป็นธรรมเนียมและคาดหวังกันอย่างกว้างขวาง ลูกค้าที่พอใจมักให้ทิป 15% ถึง 20% ของค่าสัก โดยมอบให้ช่างสักโดยตรงเป็นเงินสด</li>
+        <li><strong>สหราชอาณาจักร</strong>: การให้ทิปได้รับการขอบคุณแต่เป็นทางเลือกอย่างเคร่งครัด ลูกค้าที่ได้รับงานศิลปะเฉพาะหรือการดูแลอย่างใส่ใจมักให้ทิป 10% หรือปัดเศษใบเรียกเก็บเงินขึ้น</li>
+        <li><strong>ยุโรปตะวันตก</strong>: การให้ทิปอยู่ในระดับพอประมาณและเป็นไปตามดุลยพินิจ การปัดเศษขึ้นหรือให้ 5% ถึง 10% สำหรับงานเฉพาะเป็นเรื่องปกติ</li>
+        <li><strong>ออสเตรเลีย</strong>: อัตราของสตูดิโอสะท้อนค่าตอบแทนที่เป็นธรรมเต็มจำนวนแล้ว ไม่ได้คาดหวังการให้ทิป แม้จะรับทิปเล็กน้อยตามดุลยพินิจสำหรับการนั่งสักนาน ๆ</li>
+        </ul>
+        </div>
+        <div class="doc-section">
+        <h2>9. การใช้แบบฟอร์มการปรึกษาที่พิมพ์ได้</h2>
+        <p>เครื่องมือนี้มีแบบฟอร์มการปรึกษาหน้าเดียวที่จัดรูปแบบสำหรับการพิมพ์หรือส่งออกเป็น PDF สรุปขนาดที่คุณเลือก ตำแหน่งบนร่างกาย ตัวเลือกรายละเอียด ช่วงราคาโดยประมาณ และคำถามสำหรับการปรึกษา</p>
+        <p>นำแบบฟอร์มที่พิมพ์ไปด้วยในวันปรึกษา แบบฟอร์มนี้เป็นลำดับหัวข้อที่ชัดเจนสำหรับหารือไอเดียและราคากับช่างสักของคุณ</p>
+        </div>
+        <div class="doc-section">
+        <h2>10. ที่มาของราคาปี 2026</h2>
+        <p>ไม่มีการสำรวจราคารอยสักอย่างเป็นทางการ ช่วงราคาในเครื่องมือนี้เป็นการประมาณการเชิงบรรณาธิการ ปรับปรุงให้ทันสมัยในเดือนตุลาคม 2026 จากรายการราคาของสตูดิโอและคู่มือค่าใช้จ่ายที่เผยแพร่ในปี 2026 ราคาถูกปัดเศษและเปลี่ยนแปลงได้ จึงควรตรวจสอบกับสตูดิโอที่คุณจองเสมอ แหล่งที่มาแยกตามตลาดดังนี้:</p>
+        <ul>
+        <li>สหราชอาณาจักร: inknearyou.co.uk "Tattoo Prices UK 2026" และ "Tattoo Artist Rates UK 2026"; ข้อมูลค่าใช้จ่าย Airtasker UK 2026; whatsthedamage.co.uk (2026).</li>
+        <li>ลอนดอน: hammersmithtattoo.co.uk "Tattoo Prices in London (2026 Guide)"; inknearyou.co.uk "Tattoo Artist Rates UK 2026".</li>
+        <li>สหรัฐอเมริกา: tattoopiece.com อัตราที่เผยแพร่ของสตูดิโอในสหรัฐฯ 41 แห่งที่ตรวจสอบในเดือนสิงหาคม 2026 (ค่ามัธยฐานของราคาขั้นต่ำของร้าน $100 และค่ามัธยฐานของอัตรารายชั่วโมงระดับล่าง $155); inkjin.com "Tattoo Cost in the US" (2026).</li>
+        <li>ยุโรปตะวันตก: kostenlupe.de และรายการราคาของ atmostudioberlin.com (เยอรมนี, 2026); tatouageia.fr และรายการอัตราของสตูดิโอในปารีสที่ livementor.com อ้างถึง (ฝรั่งเศส, กันยายน 2026); tat2holics.com "Tattoo Prices Netherlands 2026".</li>
+        <li>ออสเตรเลีย: ข้อมูลค่าใช้จ่าย Airtasker AU 2026; tattoonearme.com.au "Tattoo Price Guide Australia 2026".</li>
+        <li>ยุโรปกลางและตะวันออก: cenauslug.pl (วอร์ซอ, 2026) และ finelinetattoo.pl (คราคูฟ, 2026) แปลงจาก złoty เป็นยูโรและปัดเศษแล้ว</li>
+        <li>แคนาดา: wildcranetattoos.com "Tattoo Cost in Toronto (2026)"; aminntattoo.ca "Vancouver 2026 Price Guide"; getinked.net "Tattoo Prices in British Columbia (2026)".</li>
+        <li>อเมริกาใต้ (บราซิล): ตัวคำนวณราคาของ agendzap.com.br (2026); aifortattoo.com/pt "Quanto Custa Tatuagem em 2026"; robozin.pro ราคาใน 23 เมืองของบราซิล</li>
+        <li>เอเชียตะวันออกเฉียงใต้ (ไทย): alldaytattoo.com "Bangkok Tattoo Prices 2026"; หน้าราคาของ bkkinktattoostudio.com (2026).</li>
+        </ul>
+        <p>เวลาต่อขนาด และตัวคูณสำหรับรายละเอียด สี ตำแหน่ง และระดับช่างสัก เป็นการประมาณการเชิงบรรณาธิการ เป็นอัตราส่วน ไม่ใช่ราคา และแหล่งข้อมูลปี 2026 ไม่ได้ให้เหตุผลให้เปลี่ยนแปลงค่าเหล่านี้</p>
+        </div>
+        <div class="doc-section">
+            <h2>ใช้เครื่องมือ</h2>
+            <p><a href="https://poliinternational.com/tattoo-price-estimator/" target="_top">เปิด คู่มือราคาและเอกสารสำหรับลูกค้า</a>. ทุกอย่างทำงานในเบราว์เซอร์ของคุณ ข้อมูลที่คุณป้อนไม่ถูกส่งไปที่ใด</p>
+        </div>
     </div>
 </body>
 </html>
