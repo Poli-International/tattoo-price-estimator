@@ -1,0 +1,6 @@
+{
+  "name": "Tattoo Price Estimator",
+  "description": "Professional tattoo pricing estimator and studio benchmark reference. Calculates realistic price ranges based on size, detail, colour, placement, and artist tier with interactive price drivers and consultation guidance.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
